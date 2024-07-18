@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jungle tree.png-09f27fe51655abec490d66834731ca9a.stex"
+path="res://.import/RedButton1.png-4c0cf30fb2adc89ba62db1fb3e41bd38.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/Jungle tree.png"
-dest_files=[ "res://.import/Jungle tree.png-09f27fe51655abec490d66834731ca9a.stex" ]
+source_file="res://assests/buttons/RedButton1.png"
+dest_files=[ "res://.import/RedButton1.png-4c0cf30fb2adc89ba62db1fb3e41bd38.stex" ]
 
 [params]
 

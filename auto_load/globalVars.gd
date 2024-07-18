@@ -13,7 +13,7 @@ var enemy_types = {
 }
 
 var level1 = {
-	"color":["Green","Red"],
+	"color":["Green","Red","Blue"],
 	"enemy":["Vspike"]
 }
 
