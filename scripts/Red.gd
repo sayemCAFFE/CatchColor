@@ -9,10 +9,8 @@ func _ready():
 
 func _on_RedArea_body_entered(body):
 	if body.is_in_group("player"):
-		GlobalSignals.emit_signal("red_color")
 		queue_free()
 		print("collect")
 	if body.is_in_group("floor"):
 		queue_free()
 		print("miss")
-

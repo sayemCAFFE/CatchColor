@@ -8,7 +8,6 @@ func _ready():
 
 func _on_greenArea_body_entered(body):
 	if body.is_in_group("player"):
-		GlobalSignals.emit_signal("green_color")
 		queue_free()
 		print("collect")
 		
