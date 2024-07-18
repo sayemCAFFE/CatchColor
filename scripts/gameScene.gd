@@ -2,6 +2,8 @@ extends Node2D
 
 onready var collect_timer = $CollectTimer
 
+var rng = RandomNumberGenerator
+
 func _ready():
 	_reset_collect_timer()
 
@@ -13,13 +15,11 @@ func _reset_collect_timer():
 
 func _drop_items(scene):
 	var item = scene.instance()
-	add_child(item)
-	item.linear_velocity.y = rand_range(item.speed_range.x, item.speed_range.y)  
-#	var left = randi() % 2
-#	if left == 0:
-#		item.global_position = $LeftPos.global_position
-#	else:
-#		item.global_position = $RightPos.global_position
+	$"%colors".add_child(item)
+	var random_pos = Vector2(rng.randi_range(1,200), rng.randi_range(5,5))
+	item.global_position = Vector2(random_pos.x, random_pos.y)
+	item.linear_velocity.y = rand_range(item.speed_range.x, item.speed_range.y)
+	
 
  
 func _get_collect():

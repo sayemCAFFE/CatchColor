@@ -32,5 +32,8 @@ position = Vector2( 58, -56 )
 [node name="RightPos" type="Position2D" parent="."]
 position = Vector2( 446, -54 )
 
+[node name="colors" type="Node2D" parent="."]
+unique_name_in_owner = true
+
 [connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
