@@ -1,5 +1,9 @@
 extends Node
 
+var Red_allow = false
+var Blue_allow = false
+var Green_allow = false
+
 var current_level:int = 0
 
 var collect_types = {

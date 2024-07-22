@@ -7,3 +7,8 @@ signal green_color()
 signal red_color_Off()
 signal blue_color_Off()
 signal green_color_Off()
+
+signal Sign_show(state)
+
+signal update_score()
+signal life_lost()
