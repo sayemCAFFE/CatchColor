@@ -5,4 +5,4 @@ func _ready():
 
 
 func _on_BackButton_pressed():
-	get_tree().change_scene("res://scenes/Main_menu.tscn")
+	get_tree().change_scene("res://scenes/main_menu.tscn")

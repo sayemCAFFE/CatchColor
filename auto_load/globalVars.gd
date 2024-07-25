@@ -10,17 +10,17 @@ var my_life = 3
 var current_level:int = 0
 
 var collect_types = {
-	"Red": preload("res://scenes/Red.tscn"),
-	"Blue": preload("res://scenes/Blue.tscn"),
+	"Red": preload("res://scenes/red.tscn"),
+	"Blue": preload("res://scenes/blue.tscn"),
 	"Green": preload("res://scenes/green.tscn")
 }
 
 var enemy_types = {
-	"Vspike": preload("res://scenes/Vspike.tscn")
+	"Vspike": preload("res://scenes/vspike.tscn")
 }
 
 var level1 = {
-	"color":["Red"],
+	"color":["Red","Green","Blue"],
 	"enemy":["Vspike"]
 }
 

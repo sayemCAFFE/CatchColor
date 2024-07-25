@@ -6,6 +6,9 @@ func _ready():
 	GlobalSignals.connect("life_lost", self, "_life_lost")
 	GlobalSignals.connect("score_lost",self, "_score_lost")
 	$Levels.text = "Level : "+str(GlobalVars.current_level)
+	GlobalVars.my_score = 0
+	GlobalVars.my_life = 3
+	
 
 func _Sign_show(state):
 	if state:
@@ -22,9 +25,9 @@ func _update_score():
 		if GlobalVars.current_level > GlobalVars.levels.size()-1:
 			print("game complete")
 			GlobalVars.current_level = 0
-			get_tree().change_scene("res://scenes/gameScene.tscn")
+			get_tree().change_scene("res://scenes/game_scene.tscn")
 		else:
-			get_tree().change_scene("res://scenes/gameScene.tscn")
+			get_tree().change_scene("res://scenes/game_scene.tscn")
 
 func _life_lost():
 	GlobalVars.my_life -= 1
@@ -38,4 +41,4 @@ func _score_lost():
 	
 
 func _on_BackButton_pressed():
-	get_tree().change_scene("res://scenes/Main_menu.tscn")
+	get_tree().change_scene("res://scenes/main_menu.tscn")
