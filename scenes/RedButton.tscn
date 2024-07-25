@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assests/buttons/RedButton1.png" type="Texture" id=1]
+[ext_resource path="res://assests/buttons/red_button1.png" type="Texture" id=1]
 [ext_resource path="res://assests/buttons/current_color.png" type="Texture" id=2]
 [ext_resource path="res://scripts/RedButton.gd" type="Script" id=3]
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=4]
