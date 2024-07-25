@@ -4,6 +4,9 @@ var Red_allow = false
 var Blue_allow = false
 var Green_allow = false
 
+var my_score = 0
+var my_life = 3
+
 var current_level:int = 0
 
 var collect_types = {
@@ -22,7 +25,7 @@ var level1 = {
 }
 
 var level2 = {
-	"color":["Red","Blue"],
+	"color":["Green","Blue"],
 	"enemy":["Vspike"]
 	}
 

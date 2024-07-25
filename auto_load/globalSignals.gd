@@ -11,4 +11,6 @@ signal green_color_Off()
 signal Sign_show(state)
 
 signal update_score()
+signal score_lost()
+
 signal life_lost()

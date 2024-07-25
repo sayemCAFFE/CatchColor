@@ -20,9 +20,12 @@ func _on_blueArea_body_entered(body):
 			GlobalSignals.emit_signal("Sign_show", true)
 			$Timer.start()
 	if body.is_in_group("floor"):
-		GlobalSignals.emit_signal("life_lost")
-		queue_free()
-		print("miss")
+		if GlobalVars.my_score == 0:
+			queue_free()
+		else:
+			GlobalSignals.emit_signal("score_lost")
+			queue_free()
+			print("miss")
 
 
 func _on_Timer_timeout():
