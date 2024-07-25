@@ -7,6 +7,7 @@
 radius = 40.0
 
 [node name="enemy" type="RigidBody2D" groups=["enemy"]]
+collision_layer = 4
 gravity_scale = 0.0
 script = ExtResource( 1 )
 
