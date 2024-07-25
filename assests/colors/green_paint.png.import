@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Red.png-0447a4efda56b6cc012b15610d8f556b.stex"
+path="res://.import/green_paint.png-f8a9e5ac073a02d2a63cbc0db02a192d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/colors/Red.png"
-dest_files=[ "res://.import/Red.png-0447a4efda56b6cc012b15610d8f556b.stex" ]
+source_file="res://assests/colors/green_paint.png"
+dest_files=[ "res://.import/green_paint.png-f8a9e5ac073a02d2a63cbc0db02a192d.stex" ]
 
 [params]
 
