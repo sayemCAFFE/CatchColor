@@ -18,6 +18,16 @@ func _Sign_show(state):
 func _update_score():
 	my_score += 1
 	$scoreLabel.text = "Score : "+str(my_score)
+	if my_score == 10:
+		pass
+#		if $ProgressBar.value == 100:
+#		GlobalVars.current_level += 1
+#		if GlobalVars.current_level > GlobalVars.levels.size()-1:
+#			print("game complete")
+#			GlobalVars.current_level = 0
+#			get_tree().change_scene("res://scenes/GameScene.tscn")
+#		else:
+#			get_tree().change_scene("res://scenes/GameScene.tscn")
 
 func _life_lost():
 	my_life -= 1
