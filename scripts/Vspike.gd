@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var speed_range = Vector2(500,650)
+var speed_range = Vector2(400,450)
 
 func _ready():
 	pass

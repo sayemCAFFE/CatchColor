@@ -28,6 +28,7 @@ scale = Vector2( 3.24, 0.796124 )
 autostart = true
 
 [node name="EnemyTimer" type="Timer" parent="."]
+wait_time = 1.2
 autostart = true
 
 [node name="colors" type="Node2D" parent="."]

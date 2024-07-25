@@ -13,7 +13,7 @@ var collect_types = {
 }
 
 var enemy_types = {
-	"Vspike": preload("res://scenes/enemy.tscn")
+	"Vspike": preload("res://scenes/Vspike.tscn")
 }
 
 var level1 = {
