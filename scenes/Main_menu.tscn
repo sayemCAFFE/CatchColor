@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
@@ -13,6 +13,17 @@ font_data = ExtResource( 1 )
 bg_color = Color( 0, 0.14902, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 0, 0.156863, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 45
+outline_color = Color( 0.729412, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0.14902, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 1, 0, 0.156863, 1 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -45,20 +56,36 @@ position = Vector2( 252, 350.25 )
 scale = Vector2( 7.875, 10.9453 )
 texture = ExtResource( 3 )
 
-[node name="game_button" type="Button" parent="."]
+[node name="levels_button" type="Button" parent="."]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 192.0
+margin_left = 176.0
 margin_top = 308.0
-margin_right = 321.0
+margin_right = 336.0
 margin_bottom = 365.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.866667, 0.854902, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-text = "Start"
+text = "Levels"
+icon_align = 1
+
+[node name="endless_button" type="Button" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 161.0
+margin_top = 391.0
+margin_right = 353.0
+margin_bottom = 448.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.866667, 0.854902, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "Endless"
 icon_align = 1
 
 [node name="Label" type="Label" parent="."]
@@ -76,9 +103,9 @@ valign = 1
 
 [node name="How_To_Play" type="Button" parent="."]
 margin_left = 128.0
-margin_top = 392.0
+margin_top = 474.0
 margin_right = 392.0
-margin_bottom = 444.0
+margin_bottom = 526.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
 custom_styles/hover = SubResource( 7 )
@@ -86,5 +113,6 @@ custom_styles/normal = SubResource( 8 )
 text = "How To Play"
 icon_align = 1
 
-[connection signal="pressed" from="game_button" to="." method="_on_game_button_pressed"]
+[connection signal="pressed" from="levels_button" to="." method="_on_game_button_pressed"]
+[connection signal="pressed" from="endless_button" to="." method="_on_endless_button_pressed"]
 [connection signal="pressed" from="How_To_Play" to="." method="_on_How_To_Play_pressed"]

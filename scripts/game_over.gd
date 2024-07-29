@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready():
-	pass
+	GlobalSignals.connect("high_score_show", self, "_high_score_show")
+	$high_scoreLabel.text = "High Score : "+str(GlobalVars.high_score)
 
 
 func _on_menuButton_pressed():
