@@ -13,7 +13,7 @@ var my_score = 0
 var high_score = 0
 var my_life = 3
 
-var current_level:int = 0
+var current_level:int = 1
 var endless_current:int = 0
 
 var collect_types = {
@@ -25,6 +25,8 @@ var collect_types = {
 var enemy_types = {
 	"Vspike": preload("res://scenes/vspike.tscn")
 }
+
+var none
 
 var level1 = {
 	"color":["Red"],
@@ -56,5 +58,6 @@ var endless_game = {
 	"enemy":["Vspike"]
 	}
 
-var levels = [level1,level2,level3,level4,level5]
+var levels = [none,level1,level2,level3,level4,level5]
+
 var endless_levels = [endless_game]
