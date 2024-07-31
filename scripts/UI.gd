@@ -39,21 +39,15 @@ func _update_score():
 	GlobalVars.my_score += 1
 	$scoreLabel.text = "Score : "+str(GlobalVars.my_score)
 	if GlobalVars.game_type == "level_game":
-		if GlobalVars.my_score == 10:
-			GlobalVars.current_level += 1
+		if GlobalVars.my_score == 3:
 			if GlobalVars.speed_range < Vector2(620,620):
 				GlobalVars.speed_range += Vector2(20,20)
 				print(GlobalVars.speed_range)
 			else:
 				GlobalVars.speed_range = Vector2(620,620)
 				print(GlobalVars.speed_range)
-				
-			if GlobalVars.current_level > GlobalVars.levels.size()-1:
-				print("game complete")
-				GlobalVars.current_level = 0
-				get_tree().change_scene("res://scenes/game_scene.tscn")
-			else:
-				get_tree().change_scene("res://scenes/game_scene.tscn")
+			get_tree().change_scene("res://scenes/win_scene.tscn")
+
 
 func _life_lost():
 	GlobalVars.my_life -= 1
@@ -62,6 +56,8 @@ func _life_lost():
 		if GlobalVars.my_score > GlobalVars.high_score :
 			
 			GlobalVars.high_score = GlobalVars.my_score
+		GlobalVars.speed_range = Vector2(300,300)
+		GlobalVars.endless_speed_range = Vector2(300,300)
 		get_tree().change_scene("res://scenes/game_over.tscn")
 
 func _score_lost():
@@ -70,4 +66,6 @@ func _score_lost():
 	
 
 func _on_BackButton_pressed():
+	GlobalVars.speed_range = Vector2(300,300)
+	GlobalVars.endless_speed_range = Vector2(300,300)
 	get_tree().change_scene("res://scenes/main_menu.tscn")

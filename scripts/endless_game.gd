@@ -6,6 +6,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	_reset_collect_timer()
+	$collect_speed_timer.start()
 
 func _reset_collect_timer():
 	var rnd_time:float = rand_range(1,3)
