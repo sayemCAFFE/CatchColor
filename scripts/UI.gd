@@ -6,6 +6,8 @@ func _ready():
 	GlobalSignals.connect("life_lost", self, "_life_lost")
 	GlobalSignals.connect("score_lost",self, "_score_lost")
 	$Levels.text = "Level : "+str(GlobalVars.current_level)
+	GlobalSignals.connect("computer_game", self, "_computer_game")
+	GlobalSignals.connect("mobile_game", self, "_mobile_game")
 	GlobalVars.my_score = 0
 	GlobalVars.my_life = 3
 	GlobalSignals.connect("high_score_show", self, "_high_score_show")
@@ -13,6 +15,15 @@ func _ready():
 	game_type()
 	print(GlobalVars.speed_range)
 
+func _mobile_game():
+	$right.visible = true
+	$left.visible = true
+	print("mobile")
+
+func _computer_game():
+	$right.visible = false
+	$left.visible = false
+	print("computer")
 
 func game_type():
 	if GlobalVars.game_type == "level_game":
@@ -69,3 +80,16 @@ func _on_BackButton_pressed():
 	GlobalVars.speed_range = Vector2(300,300)
 	GlobalVars.endless_speed_range = Vector2(300,300)
 	get_tree().change_scene("res://scenes/main_menu.tscn")
+
+func _on_right_button_down():
+	GlobalSignals.emit_signal("move_right")
+
+func _on_right_button_up():
+	GlobalSignals.emit_signal("right_stop")
+
+func _on_left_button_up():
+	GlobalSignals.emit_signal("left_stop")
+
+func _on_left_button_down():
+	GlobalSignals.emit_signal("move_left")
+

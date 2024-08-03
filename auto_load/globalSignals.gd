@@ -15,3 +15,12 @@ signal update_score()
 signal score_lost()
 
 signal life_lost()
+
+signal move_right()
+signal right_stop()
+
+signal move_left()
+signal left_stop()
+
+signal mobile_game()
+signal computer_game()

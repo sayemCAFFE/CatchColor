@@ -1,10 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/how_to_play.gd" type="Script" id=2]
 [ext_resource path="res://assests/others/right,left.png" type="Texture" id=3]
 [ext_resource path="res://assests/others/number.png" type="Texture" id=4]
 [ext_resource path="res://assests/others/back_button.png" type="Texture" id=5]
+[ext_resource path="res://assests/buttons/next_page.png" type="Texture" id=6]
+[ext_resource path="res://assests/buttons/right_side.png" type="Texture" id=7]
+[ext_resource path="res://assests/buttons/left_side.png" type="Texture" id=8]
+[ext_resource path="res://assests/buttons/press.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -13,12 +17,27 @@ font_data = ExtResource( 1 )
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0.517647, 0.0470588, 1 )
 
+[sub_resource type="DynamicFont" id=11]
+size = 50
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 1, 0, 0, 1 )
+
 [sub_resource type="DynamicFont" id=3]
 size = 28
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0.517647, 0.0470588, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 45
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.0509804, 0.109804, 0.431373, 1 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 28
@@ -27,12 +46,26 @@ font_data = ExtResource( 1 )
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0.517647, 0.0470588, 1 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 40
+[sub_resource type="DynamicFont" id=13]
+size = 45
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.917647, 1, 0, 1 )
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.0509804, 0.109804, 0.431373, 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 28
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0, 0.517647, 0.0470588, 1 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 28
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0, 0.517647, 0.0470588, 1 )
 
 [node name="HowToPlay" type="Node2D"]
 script = ExtResource( 2 )
@@ -41,11 +74,6 @@ script = ExtResource( 2 )
 margin_right = 504.0
 margin_bottom = 704.0
 color = Color( 0.521569, 1, 0, 1 )
-
-[node name="right_left" type="Sprite" parent="."]
-position = Vector2( 59.625, 185 )
-scale = Vector2( 1.625, 1.625 )
-texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -8.0
@@ -61,11 +89,50 @@ text = "How To Play"
 align = 1
 valign = 1
 
-[node name="right_left_label" type="Label" parent="."]
+[node name="BackButton" type="TextureButton" parent="."]
+margin_left = 27.0
+margin_top = 616.0
+margin_right = 91.0
+margin_bottom = 680.0
+texture_normal = ExtResource( 5 )
+
+[node name="first_page_button" type="TextureButton" parent="."]
+margin_left = 459.0
+margin_top = 397.0
+margin_right = 537.0
+margin_bottom = 517.0
+rect_scale = Vector2( 0.485866, 0.424562 )
+texture_normal = ExtResource( 6 )
+
+[node name="page" type="Label" parent="."]
+margin_left = 232.0
+margin_top = 624.0
+margin_right = 272.0
+margin_bottom = 681.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="computers" type="Node2D" parent="."]
+
+[node name="numbers" type="Sprite" parent="computers"]
+position = Vector2( 67, 292.5 )
+scale = Vector2( 1, 1.20588 )
+texture = ExtResource( 4 )
+
+[node name="right_left" type="Sprite" parent="computers"]
+position = Vector2( 59.625, 221 )
+scale = Vector2( 1.625, 1.625 )
+texture = ExtResource( 3 )
+
+[node name="right_left_label" type="Label" parent="computers"]
 margin_left = 120.0
-margin_top = 163.0
+margin_top = 199.0
 margin_right = 499.0
-margin_bottom = 211.0
+margin_bottom = 247.0
 custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -75,11 +142,26 @@ text = "Right,Left arrow to move"
 align = 1
 valign = 1
 
-[node name="numberLabel" type="Label" parent="."]
+[node name="computer" type="Label" parent="computers"]
+margin_left = 60.0
+margin_top = 126.0
+margin_right = 439.0
+margin_bottom = 177.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Computer"
+align = 1
+valign = 1
+
+[node name="numberLabel" type="Label" parent="computers"]
 margin_left = 136.0
-margin_top = 279.0
+margin_top = 273.0
 margin_right = 496.0
-margin_bottom = 319.0
+margin_bottom = 313.0
 custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -89,33 +171,65 @@ text = "Number to choice color"
 align = 1
 valign = 1
 
-[node name="numbers" type="Sprite" parent="."]
-position = Vector2( 67, 298.5 )
-scale = Vector2( 1, 1.20588 )
-texture = ExtResource( 4 )
+[node name="mobiles" type="Node2D" parent="."]
 
-[node name="BackButton" type="TextureButton" parent="."]
-margin_left = 32.0
-margin_top = 601.0
-margin_right = 96.0
-margin_bottom = 665.0
-texture_normal = ExtResource( 5 )
-
-[node name="Label2" type="Label" parent="."]
-margin_top = 356.0
-margin_right = 504.0
-margin_bottom = 598.0
-custom_colors/font_color = Color( 0, 0.0627451, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+[node name="mobile" type="Label" parent="mobiles"]
+margin_left = 60.0
+margin_top = 364.0
+margin_right = 439.0
+margin_bottom = 415.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
-custom_fonts/font = SubResource( 7 )
-custom_styles/normal = SubResource( 8 )
-text = "To collect the colors
-worn from the top, 
-press the button of the
-colorsbelow and then
-collect"
+custom_fonts/font = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+text = "mobile"
+align = 1
+valign = 1
+
+[node name="press" type="Sprite" parent="mobiles"]
+position = Vector2( 37, 567 )
+scale = Vector2( 1.22581, 1.26534 )
+texture = ExtResource( 9 )
+
+[node name="right" type="Sprite" parent="mobiles"]
+position = Vector2( 98, 488 )
+scale = Vector2( 1.625, 1.625 )
+texture = ExtResource( 7 )
+
+[node name="left" type="Sprite" parent="mobiles"]
+position = Vector2( 32, 488 )
+scale = Vector2( 1.625, 1.625 )
+texture = ExtResource( 8 )
+
+[node name="right_left_label" type="Label" parent="mobiles"]
+margin_left = 129.0
+margin_top = 465.0
+margin_right = 498.0
+margin_bottom = 513.0
+custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_fonts/font = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+text = "Right,Left button to move"
+align = 1
+valign = 1
+
+[node name="numberLabel" type="Label" parent="mobiles"]
+margin_left = 80.0
+margin_top = 536.0
+margin_right = 497.0
+margin_bottom = 584.0
+custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_fonts/font = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+text = "Click to choice color"
 align = 1
 valign = 1
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="first_page_button" to="." method="_on_next_page_button_pressed"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_home.png-7020caa1f39a83f4c8bdfca7666f22d7.stex"
+path="res://.import/left_side.png-f609b628cd0ee7d2d1c68deb700ca8d6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/others/blue_home.png"
-dest_files=[ "res://.import/blue_home.png-7020caa1f39a83f4c8bdfca7666f22d7.stex" ]
+source_file="res://assests/buttons/left_side.png"
+dest_files=[ "res://.import/left_side.png-f609b628cd0ee7d2d1c68deb700ca8d6.stex" ]
 
 [params]
 

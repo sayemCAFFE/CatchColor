@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/useing_device.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0117647, 0.482353, 0.156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.227451, 0.156863, 0.156863, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0117647, 0.0745098, 0.321569, 1 )
+
+[node name="useing_device" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 504.0
+margin_bottom = 704.0
+color = Color( 0.14902, 0.145098, 0.168627, 1 )
+
+[node name="question" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 160.0
+margin_right = 488.0
+margin_bottom = 207.0
+custom_fonts/font = SubResource( 1 )
+text = "What are you useing ?"
+align = 1
+valign = 1
+
+[node name="computer_button" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 272.0
+margin_right = 246.0
+margin_bottom = 324.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/normal = SubResource( 5 )
+text = "Computer"
+
+[node name="mobile_button" type="Button" parent="."]
+margin_left = 304.0
+margin_top = 272.0
+margin_right = 488.0
+margin_bottom = 324.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+text = "Mobile"
+icon_align = 1
+
+[connection signal="pressed" from="computer_button" to="." method="_on_computer_button_pressed"]
+[connection signal="pressed" from="mobile_button" to="." method="_on_mobile_button_pressed"]

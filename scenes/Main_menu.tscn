@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
-[ext_resource path="res://assests/others/tree.png" type="Texture" id=3]
+[ext_resource path="res://assests/background/day_sky.png" type="Texture" id=3]
 [ext_resource path="res://assests/buttons/color_button.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=4]
@@ -11,16 +11,6 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.247059, 0, 1, 1 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 40
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0, 0.00784314, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 35
@@ -51,14 +41,14 @@ margin_bottom = 716.0
 color = Color( 0, 0.368627, 1, 1 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 252, 350.25 )
-scale = Vector2( 7.875, 10.9453 )
+position = Vector2( 254.406, 350.316 )
+scale = Vector2( 2.06075, 2.02105 )
 texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
-margin_top = 56.0
-margin_right = 512.0
-margin_bottom = 146.0
+margin_top = 54.0
+margin_right = 501.0
+margin_bottom = 144.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 6
@@ -68,23 +58,11 @@ text = "Catch Color"
 align = 1
 valign = 1
 
-[node name="How_To_Play" type="Button" parent="."]
-margin_left = 128.0
-margin_top = 497.0
-margin_right = 392.0
-margin_bottom = 549.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
-custom_styles/hover = SubResource( 7 )
-custom_styles/normal = SubResource( 8 )
-text = "How To Play"
-icon_align = 1
-
 [node name="level_button" type="TextureButton" parent="."]
 margin_left = 160.0
-margin_top = 241.0
+margin_top = 257.0
 margin_right = 358.0
-margin_bottom = 361.0
+margin_bottom = 377.0
 rect_scale = Vector2( 0.951993, 0.847461 )
 texture_normal = ExtResource( 4 )
 
@@ -103,9 +81,9 @@ valign = 1
 
 [node name="endless_button" type="TextureButton" parent="."]
 margin_left = 128.0
-margin_top = 357.0
+margin_top = 358.0
 margin_right = 326.0
-margin_bottom = 477.0
+margin_bottom = 478.0
 rect_scale = Vector2( 1.30526, 0.839348 )
 texture_normal = SubResource( 13 )
 
@@ -124,13 +102,13 @@ valign = 1
 
 [node name="how_to_play" type="TextureButton" parent="."]
 margin_left = 75.1919
-margin_top = 471.159
+margin_top = 462.159
 margin_right = 273.192
-margin_bottom = 591.159
+margin_bottom = 582.159
 rect_scale = Vector2( 1.85707, 0.953776 )
 texture_normal = SubResource( 15 )
 
-[node name="htp_label" type="Label" parent="how_to_play"]
+[node name="Label" type="Label" parent="how_to_play"]
 margin_left = 33.7307
 margin_top = 31.7079
 margin_right = 165.731
@@ -143,7 +121,6 @@ text = "How to Play"
 align = 1
 valign = 1
 
-[connection signal="pressed" from="How_To_Play" to="." method="_on_How_To_Play_pressed"]
 [connection signal="pressed" from="level_button" to="." method="_on_level_button_pressed"]
 [connection signal="pressed" from="endless_button" to="." method="_on_endless_button_pressed"]
 [connection signal="pressed" from="how_to_play" to="." method="_on_how_to_play_pressed"]

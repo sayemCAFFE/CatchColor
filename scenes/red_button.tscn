@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.1403
 
-[node name="RedButton" type="Area2D"]
+[node name="redButton" type="Area2D"]
 script = ExtResource( 3 )
 
 [node name="RedButton" type="Sprite" parent="."]
@@ -20,3 +20,12 @@ texture = ExtResource( 2 )
 
 [node name="RedButtonCol" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="red_buttonM" type="TextureButton" parent="."]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 1 )
+
+[connection signal="pressed" from="red_buttonM" to="." method="_on_red_buttonM_pressed"]

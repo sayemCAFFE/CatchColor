@@ -1,12 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=2]
 [ext_resource path="res://assests/others/back_button.png" type="Texture" id=3]
+[ext_resource path="res://assests/buttons/left_side.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
 font_data = ExtResource( 1 )
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/right_side.png-e3611d98e43e86f32be82c8d55ba96ca.stex"
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
@@ -27,6 +32,7 @@ font_data = ExtResource( 1 )
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -928, 72 )
 script = ExtResource( 2 )
 
 [node name="sign_label" type="Label" parent="."]
@@ -46,6 +52,22 @@ valign = 1
 margin_right = 64.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 3 )
+
+[node name="right" type="TextureButton" parent="."]
+margin_left = 426.0
+margin_top = 504.0
+margin_right = 461.0
+margin_bottom = 534.0
+rect_scale = Vector2( 1.9033, 1.85075 )
+texture_normal = SubResource( 6 )
+
+[node name="left" type="TextureButton" parent="."]
+margin_left = 9.0
+margin_top = 504.0
+margin_right = 44.0
+margin_bottom = 534.0
+rect_scale = Vector2( 1.9033, 1.85075 )
+texture_normal = ExtResource( 4 )
 
 [node name="lifeLabel" type="Label" parent="."]
 margin_left = 352.0
@@ -90,3 +112,7 @@ custom_fonts/font = SubResource( 5 )
 text = "High Score : 0"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="button_down" from="right" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="right" to="." method="_on_right_button_up"]
+[connection signal="button_down" from="left" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="left" to="." method="_on_left_button_up"]

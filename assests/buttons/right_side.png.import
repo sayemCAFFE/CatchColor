@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jungle tree.png-4b64eb08b8ac3acaa54f31fb43fc6e7e.stex"
+path="res://.import/right_side.png-e3611d98e43e86f32be82c8d55ba96ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/others/Jungle tree.png"
-dest_files=[ "res://.import/Jungle tree.png-4b64eb08b8ac3acaa54f31fb43fc6e7e.stex" ]
+source_file="res://assests/buttons/right_side.png"
+dest_files=[ "res://.import/right_side.png-e3611d98e43e86f32be82c8d55ba96ca.stex" ]
 
 [params]
 

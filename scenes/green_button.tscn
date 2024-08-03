@@ -20,3 +20,12 @@ texture = ExtResource( 2 )
 
 [node name="green_buttoncol" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="green_buttonM" type="TextureButton" parent="."]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 1 )
+
+[connection signal="pressed" from="green_buttonM" to="." method="_on_green_buttonM_pressed"]
