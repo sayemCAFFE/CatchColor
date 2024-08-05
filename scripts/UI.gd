@@ -19,11 +19,9 @@ func game_device():
 	if GlobalVars.game_device == "computer_game":
 		$"%right".visible = false
 		$"%left".visible = false
-		print("computer_game")
 	if GlobalVars.game_device == "mobile_game":
 		$"%right".visible = true
 		$"%left".visible = true
-		print("mobile_game")
 
 func game_type():
 	if GlobalVars.game_type == "level_game":

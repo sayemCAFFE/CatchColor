@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
@@ -13,6 +13,14 @@ font_data = ExtResource( 1 )
 bg_color = Color( 0.247059, 0, 1, 1 )
 
 [sub_resource type="DynamicFont" id=12]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="StreamTexture" id=17]
+flags = 4
+load_path = "res://.import/color_button.png-80496f24b8eed868e0c0fb114e2ac5b1.stex"
+
+[sub_resource type="DynamicFont" id=18]
 size = 35
 font_data = ExtResource( 1 )
 
@@ -60,9 +68,9 @@ valign = 1
 
 [node name="level_button" type="TextureButton" parent="."]
 margin_left = 160.0
-margin_top = 257.0
+margin_top = 206.0
 margin_right = 358.0
-margin_bottom = 377.0
+margin_bottom = 326.0
 rect_scale = Vector2( 0.951993, 0.847461 )
 texture_normal = ExtResource( 4 )
 
@@ -79,11 +87,32 @@ text = "Levels"
 align = 1
 valign = 1
 
+[node name="settings" type="TextureButton" parent="."]
+margin_left = 136.0
+margin_top = 530.0
+margin_right = 334.0
+margin_bottom = 650.0
+rect_scale = Vector2( 1.26347, 1.01972 )
+texture_normal = SubResource( 17 )
+
+[node name="setting_label" type="Label" parent="settings"]
+margin_left = 34.6641
+margin_top = 36.5798
+margin_right = 164.664
+margin_bottom = 82.5798
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_fonts/font = SubResource( 18 )
+text = "Setting"
+align = 1
+valign = 1
+
 [node name="endless_button" type="TextureButton" parent="."]
 margin_left = 128.0
-margin_top = 358.0
+margin_top = 307.0
 margin_right = 326.0
-margin_bottom = 478.0
+margin_bottom = 427.0
 rect_scale = Vector2( 1.30526, 0.839348 )
 texture_normal = SubResource( 13 )
 
@@ -102,9 +131,9 @@ valign = 1
 
 [node name="how_to_play" type="TextureButton" parent="."]
 margin_left = 75.1919
-margin_top = 462.159
+margin_top = 411.159
 margin_right = 273.192
-margin_bottom = 582.159
+margin_bottom = 531.159
 rect_scale = Vector2( 1.85707, 0.953776 )
 texture_normal = SubResource( 15 )
 
@@ -122,5 +151,6 @@ align = 1
 valign = 1
 
 [connection signal="pressed" from="level_button" to="." method="_on_level_button_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="endless_button" to="." method="_on_endless_button_pressed"]
 [connection signal="pressed" from="how_to_play" to="." method="_on_how_to_play_pressed"]
