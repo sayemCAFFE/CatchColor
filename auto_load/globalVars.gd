@@ -3,6 +3,8 @@ extends Node
 var speed_range = Vector2(300,300)
 var endless_speed_range = Vector2(300,300)
 
+var game_device : String
+
 var game_type : String
 
 var Red_allow = false

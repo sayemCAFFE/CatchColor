@@ -21,6 +21,3 @@ signal right_stop()
 
 signal move_left()
 signal left_stop()
-
-signal mobile_game()
-signal computer_game()

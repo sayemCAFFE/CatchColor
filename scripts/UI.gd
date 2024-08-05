@@ -6,24 +6,24 @@ func _ready():
 	GlobalSignals.connect("life_lost", self, "_life_lost")
 	GlobalSignals.connect("score_lost",self, "_score_lost")
 	$Levels.text = "Level : "+str(GlobalVars.current_level)
-	GlobalSignals.connect("computer_game", self, "_computer_game")
-	GlobalSignals.connect("mobile_game", self, "_mobile_game")
 	GlobalVars.my_score = 0
 	GlobalVars.my_life = 3
 	GlobalSignals.connect("high_score_show", self, "_high_score_show")
 	$high_score.text = "High Score : "+str(GlobalVars.high_score)
 	game_type()
+	game_device()
 	print(GlobalVars.speed_range)
+	var game_device = false
 
-func _mobile_game():
-	$"%right".visible = true
-	$"%left".visible = true
-	print("mobile")
-
-func _computer_game():
-	$"%right".visible = false
-	$"%left".visible = false
-	print("computer")
+func game_device():
+	if GlobalVars.game_device == "computer_game":
+		$"%right".visible = false
+		$"%left".visible = false
+		print("computer_game")
+	if GlobalVars.game_device == "mobile_game":
+		$"%right".visible = true
+		$"%left".visible = true
+		print("mobile_game")
 
 func game_type():
 	if GlobalVars.game_type == "level_game":
