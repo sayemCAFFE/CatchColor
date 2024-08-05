@@ -16,13 +16,13 @@ func _ready():
 	print(GlobalVars.speed_range)
 
 func _mobile_game():
-	$right.visible = true
-	$left.visible = true
+	$"%right".visible = true
+	$"%left".visible = true
 	print("mobile")
 
 func _computer_game():
-	$right.visible = false
-	$left.visible = false
+	$"%right".visible = false
+	$"%left".visible = false
 	print("computer")
 
 func game_type():
