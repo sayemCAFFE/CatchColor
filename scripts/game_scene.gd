@@ -5,8 +5,26 @@ onready var collect_timer = $CollectTimer
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	GlobalSignals.connect("update_score", self, "_update_score")
+	GlobalSignals.connect("score_lost", self, "_score_lost")
 	_reset_collect_timer()
 
+func _update_score():
+	if GlobalVars.game_type == "level_game":
+		$"%backgroundcolor".scale.y += 0.05
+		if $"%backgroundcolor".scale.y >= 1.0:
+			if GlobalVars.speed_range < Vector2(620,620):
+				GlobalVars.speed_range += Vector2(20,20)
+				print(GlobalVars.speed_range)
+			else:
+				GlobalVars.speed_range = Vector2(620,620)
+				print(GlobalVars.speed_range)
+			get_tree().change_scene("res://scenes/win_scene.tscn")
+
+func _score_lost():
+	if GlobalVars.game_type == "level_game":
+		if $"%backgroundcolor".scale.y > 0.0:
+			$"%backgroundcolor".scale.y -= 0.05
 
 func _reset_collect_timer():
 	var rnd_time:float = rand_range(1,3)

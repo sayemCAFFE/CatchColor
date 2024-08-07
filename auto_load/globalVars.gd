@@ -6,6 +6,7 @@ var endless_speed_range = Vector2(300,300)
 var game_device : String
 
 var game_type : String
+var one_time_chack = true
 
 var Red_allow = false
 var Blue_allow = false

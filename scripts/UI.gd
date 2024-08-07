@@ -23,6 +23,7 @@ func game_device():
 		$"%right".visible = true
 		$"%left".visible = true
 
+
 func game_type():
 	if GlobalVars.game_type == "level_game":
 		$lifeLabel.visible = true
@@ -43,33 +44,26 @@ func _Sign_show(state):
 		$"%sign_label".text = "! Color Choice Error !"
 	else:
 		$"%sign_label".visible = false
+		$collect.play()
 
 func _update_score():
 	GlobalVars.my_score += 1
 	$scoreLabel.text = "Score : "+str(GlobalVars.my_score)
-	if GlobalVars.game_type == "level_game":
-		if GlobalVars.my_score == 3:
-			if GlobalVars.speed_range < Vector2(620,620):
-				GlobalVars.speed_range += Vector2(20,20)
-				print(GlobalVars.speed_range)
-			else:
-				GlobalVars.speed_range = Vector2(620,620)
-				print(GlobalVars.speed_range)
-			get_tree().change_scene("res://scenes/win_scene.tscn")
 
 
 func _life_lost():
 	GlobalVars.my_life -= 1
+	$player_hit.play()
 	$lifeLabel.text = "Life : "+str(GlobalVars.my_life)
 	if GlobalVars.my_life == 0:
 		if GlobalVars.my_score > GlobalVars.high_score :
-			
 			GlobalVars.high_score = GlobalVars.my_score
 		GlobalVars.speed_range = Vector2(300,300)
 		GlobalVars.endless_speed_range = Vector2(300,300)
 		get_tree().change_scene("res://scenes/game_over.tscn")
 
 func _score_lost():
+	$error.play()
 	GlobalVars.my_score -= 1
 	$scoreLabel.text = "Score : "+str(GlobalVars.my_score)
 	

@@ -1,12 +1,13 @@
 extends Node2D
 
 func _ready():
-	var sistem = OS.get_name()
-	print(sistem)
-	if sistem == "Windows":
-		GlobalVars.game_device == "computer_game"
-	elif sistem == "Android":
-		GlobalVars.game_device == "mobile_game"
+	if GlobalVars.one_time_chack == true:
+		var sistem = OS.get_name()
+		print(sistem)
+		if sistem == "Windows":
+			GlobalVars.game_device = "computer_game"
+		elif sistem == "Android":
+			GlobalVars.game_device = "mobile_game"
 
 func _on_level_button_pressed():
 	GlobalVars.game_type = "level_game"
