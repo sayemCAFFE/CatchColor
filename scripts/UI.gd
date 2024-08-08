@@ -21,7 +21,7 @@ func sound_check():
 		$error.stream_paused = false
 		$collect.stream_paused = false
 		$player_hit.stream_paused = false
-	if GlobalVars.sound_off == true:
+	if GlobalVars.sound_on == false:
 		$error.stream_paused = true
 		$collect.stream_paused = true
 		$player_hit.stream_paused = true

@@ -9,7 +9,6 @@ var game_type : String
 var one_time_chack = true
 
 var sound_on = true
-var sound_off = false
 
 var one_time = true
 

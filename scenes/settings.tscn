@@ -126,6 +126,7 @@ icon_align = 1
 
 [node name="on_icon" type="Sprite" parent="On"]
 unique_name_in_owner = true
+visible = false
 position = Vector2( 100, 24 )
 scale = Vector2( 1.93333, 0.533333 )
 texture = SubResource( 16 )

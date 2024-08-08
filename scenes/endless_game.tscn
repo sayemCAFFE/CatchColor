@@ -25,16 +25,6 @@ position = Vector2( 248, 565 )
 position = Vector2( 250, 613 )
 scale = Vector2( 3.24, 0.796124 )
 
-[node name="CollectTimer" type="Timer" parent="."]
-autostart = true
-
-[node name="EnemyTimer" type="Timer" parent="."]
-wait_time = 1.2
-autostart = true
-
-[node name="colors" type="Node2D" parent="."]
-unique_name_in_owner = true
-
 [node name="floor2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 515, 307 )
 rotation = 1.56671
@@ -44,6 +34,19 @@ scale = Vector2( 4.64161, 1 )
 position = Vector2( -17, 303 )
 rotation = 1.56671
 scale = Vector2( 4.44177, 1 )
+
+[node name="CollectTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="EnemyTimer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
+
+[node name="collect_speed_timer" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="colors" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="RedButton" parent="." instance=ExtResource( 4 )]
 position = Vector2( 72, 656 )
@@ -56,11 +59,9 @@ position = Vector2( 432, 656 )
 
 [node name="UI" parent="." instance=ExtResource( 8 )]
 
-[node name="collect_speed_timer" type="Timer" parent="."]
-wait_time = 3.0
-
 [node name="game_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = 6.0
 autoplay = true
 
 [connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
