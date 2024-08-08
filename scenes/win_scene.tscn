@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/win_scene.gd" type="Script" id=2]
@@ -20,6 +20,16 @@ bg_color = Color( 0.270588, 0, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.305882, 1, 0, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 45
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.270588, 0, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 0.192157, 0, 1 )
 
 [node name="win_scene" type="Node2D"]
 script = ExtResource( 2 )
@@ -54,4 +64,16 @@ custom_styles/hover = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 text = "Next Level"
 
+[node name="main_menu" type="Button" parent="."]
+margin_left = 104.0
+margin_top = 359.0
+margin_right = 408.0
+margin_bottom = 416.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Main Menu"
+
 [connection signal="pressed" from="nextLevel" to="." method="_on_nextLevel_pressed"]
+[connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]

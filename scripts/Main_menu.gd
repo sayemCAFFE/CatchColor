@@ -21,4 +21,4 @@ func _on_how_to_play_pressed():
 	get_tree().change_scene("res://scenes/how_to_play.tscn")
 
 func _on_settings_pressed():
-	get_tree().change_scene("res://scenes/useing_control.tscn")
+	get_tree().change_scene("res://scenes/settings.tscn")

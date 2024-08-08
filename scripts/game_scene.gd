@@ -5,9 +5,16 @@ onready var collect_timer = $CollectTimer
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	sound_check()
 	GlobalSignals.connect("update_score", self, "_update_score")
 	GlobalSignals.connect("score_lost", self, "_score_lost")
 	_reset_collect_timer()
+
+func sound_check():
+	if GlobalVars.sound_on == true:
+		$game_sound.stream_paused = false
+	if GlobalVars.sound_off == true:
+		$game_sound.stream_paused = true
 
 func _update_score():
 	if GlobalVars.game_type == "level_game":

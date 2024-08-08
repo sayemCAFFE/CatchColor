@@ -13,3 +13,6 @@ func _on_nextLevel_pressed():
 	else:
 		get_tree().change_scene("res://scenes/game_scene.tscn")
 	
+
+func _on_main_menu_pressed():
+	get_tree().change_scene("res://scenes/main_menu.tscn")

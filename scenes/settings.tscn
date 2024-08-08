@@ -1,0 +1,163 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/useing_device.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 42
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0117647, 0.482353, 0.156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.227451, 0.156863, 0.156863, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0117647, 0.0745098, 0.321569, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.0509804, 0.392157, 0.00392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0.396078, 0.0196078, 1 )
+
+[sub_resource type="StreamTexture" id=16]
+flags = 4
+load_path = "res://.import/on_icon.png-9fdb0ae806548ebd5fb4aba3ae194584.stex"
+
+[sub_resource type="DynamicFont" id=13]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.0509804, 0.392157, 0.00392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.823529, 0.00392157, 0.00392157, 1 )
+
+[sub_resource type="StreamTexture" id=17]
+flags = 4
+load_path = "res://.import/on_icon.png-9fdb0ae806548ebd5fb4aba3ae194584.stex"
+
+[sub_resource type="StreamTexture" id=12]
+flags = 4
+load_path = "res://.import/back_button.png-fc667308579cc9d3a1d4b66657bae9bd.stex"
+
+[node name="settings" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 504.0
+margin_bottom = 704.0
+color = Color( 0.14902, 0.145098, 0.168627, 1 )
+
+[node name="question" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 75.0
+margin_right = 490.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 1 )
+text = "Game Controls...."
+align = 1
+valign = 1
+
+[node name="sound_on_off" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 291.0
+margin_right = 490.0
+margin_bottom = 338.0
+custom_fonts/font = SubResource( 8 )
+text = "Sound"
+align = 1
+valign = 1
+
+[node name="computer_button" type="Button" parent="."]
+margin_left = 17.0
+margin_top = 188.0
+margin_right = 239.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/normal = SubResource( 5 )
+text = "keyboard"
+
+[node name="mobile_button" type="Button" parent="."]
+margin_left = 304.0
+margin_top = 188.0
+margin_right = 488.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+text = "touch"
+icon_align = 1
+
+[node name="On" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 384.0
+margin_right = 216.0
+margin_bottom = 432.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/normal = SubResource( 10 )
+text = "On"
+icon_align = 1
+
+[node name="on_icon" type="Sprite" parent="On"]
+unique_name_in_owner = true
+position = Vector2( 100, 24 )
+scale = Vector2( 1.93333, 0.533333 )
+texture = SubResource( 16 )
+
+[node name="Off" type="Button" parent="."]
+margin_left = 280.0
+margin_top = 384.0
+margin_right = 488.0
+margin_bottom = 432.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "Off"
+icon_align = 1
+
+[node name="on_icon2" type="Sprite" parent="Off"]
+unique_name_in_owner = true
+visible = false
+position = Vector2( 100, 24 )
+scale = Vector2( 1.93333, 0.533333 )
+texture = SubResource( 17 )
+
+[node name="back_button" type="TextureButton" parent="."]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 66.0
+margin_bottom = 66.0
+texture_normal = SubResource( 12 )
+
+[connection signal="pressed" from="computer_button" to="." method="_on_computer_button_pressed"]
+[connection signal="pressed" from="mobile_button" to="." method="_on_mobile_button_pressed"]
+[connection signal="pressed" from="On" to="." method="_on_On_pressed"]
+[connection signal="pressed" from="Off" to="." method="_on_Off_pressed"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

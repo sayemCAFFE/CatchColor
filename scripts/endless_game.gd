@@ -5,8 +5,15 @@ onready var collect_timer = $CollectTimer
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	sound_check()
 	_reset_collect_timer()
 	$collect_speed_timer.start()
+
+func sound_check():
+	if GlobalVars.sound_on == true:
+		$game_sound.stream_paused = false
+	if GlobalVars.sound_off == true:
+		$game_sound.stream_paused = true
 
 func _reset_collect_timer():
 	var rnd_time:float = rand_range(1,3)
@@ -59,7 +66,7 @@ func _on_EnemyTimer_timeout():
 func _on_collect_speed_timer_timeout():
 	if GlobalVars.game_type == "endless_game":
 		if GlobalVars.endless_speed_range < Vector2(620,620):
-			GlobalVars.endless_speed_range += Vector2(20,20)
+			GlobalVars.endless_speed_range += Vector2(10,10)
 			print(GlobalVars.endless_speed_range)
 		else:
 			GlobalVars.endless_speed_range = Vector2(620,620)

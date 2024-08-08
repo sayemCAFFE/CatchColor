@@ -12,8 +12,19 @@ func _ready():
 	$high_score.text = "High Score : "+str(GlobalVars.high_score)
 	game_type()
 	game_device()
+	sound_check()
 	print(GlobalVars.speed_range)
 	var game_device = false
+
+func sound_check():
+	if GlobalVars.sound_on == true:
+		$error.stream_paused = false
+		$collect.stream_paused = false
+		$player_hit.stream_paused = false
+	if GlobalVars.sound_off == true:
+		$error.stream_paused = true
+		$collect.stream_paused = true
+		$player_hit.stream_paused = true
 
 func game_device():
 	if GlobalVars.game_device == "computer_game":
