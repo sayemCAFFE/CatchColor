@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/how_to_play.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assests/buttons/right_side.png" type="Texture" id=7]
 [ext_resource path="res://assests/buttons/left_side.png" type="Texture" id=8]
 [ext_resource path="res://assests/buttons/press.png" type="Texture" id=9]
+[ext_resource path="res://audio/normal_sound.mp3" type="AudioStream" id=10]
+[ext_resource path="res://audio/hit_drop.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -230,6 +232,13 @@ custom_styles/normal = SubResource( 20 )
 text = "Click to choice color"
 align = 1
 valign = 1
+
+[node name="normal_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="first_page_button" to="." method="_on_next_page_button_pressed"]

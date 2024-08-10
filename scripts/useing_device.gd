@@ -3,12 +3,16 @@ extends Node2D
 var sound_text : String
 
 func _ready():
+	sound_buttons_state()
+	sound_check()
+
+func sound_check():
 	if GlobalVars.sound_on == true:
-		$"%on_icon".visible = true
-		$"%on_icon2".visible = false
+		$normal_sound.stream_paused = false
+		$pressed.stream_paused = false
 	if GlobalVars.sound_on == false:
-		$"%on_icon2".visible = true
-		$"%on_icon".visible = false
+		$normal_sound.stream_paused = true
+		$pressed.stream_paused = true
 
 func _on_computer_button_pressed():
 	GlobalVars.one_time_chack = false
@@ -23,17 +27,19 @@ func _on_mobile_button_pressed():
 	print("mobile")
 
 func _on_back_button_pressed():
+	$pressed.play()
 	get_tree().change_scene("res://scenes/main_menu.tscn")
 
+func sound_buttons_state():
+	$"%on_icon".visible = GlobalVars.sound_on
+	$"%on_icon2".visible = not GlobalVars.sound_on
 
 func _on_On_pressed():
 	GlobalVars.sound_on = true
-	$"%on_icon".visible = true
-	$"%on_icon2".visible = false
-	print("sound_on")
+	sound_check()
+	sound_buttons_state()
 
 func _on_Off_pressed():
-	$"%on_icon".visible = false
-	$"%on_icon2".visible = true
 	GlobalVars.sound_on = false
-	print("sound_off")
+	sound_check()
+	sound_buttons_state()

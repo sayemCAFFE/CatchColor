@@ -12,7 +12,9 @@ func _ready():
 func sound_check():
 	if GlobalVars.sound_on == true:
 		$game_sound.stream_paused = false
+		$pressed.stream_paused = false
 	if GlobalVars.sound_on == false:
+		$pressed.stream_paused = true
 		$game_sound.stream_paused = true
 
 func _reset_collect_timer():

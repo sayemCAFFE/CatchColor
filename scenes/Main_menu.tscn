@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
 [ext_resource path="res://assests/background/day_sky.png" type="Texture" id=3]
 [ext_resource path="res://assests/buttons/color_button.png" type="Texture" id=4]
+[ext_resource path="res://audio/normal_sound.mp3" type="AudioStream" id=5]
+[ext_resource path="res://audio/hit_drop.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=4]
 size = 80
@@ -149,6 +151,13 @@ custom_fonts/font = SubResource( 16 )
 text = "How to Play"
 align = 1
 valign = 1
+
+[node name="normal_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="pressed" from="level_button" to="." method="_on_level_button_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

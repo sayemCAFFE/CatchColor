@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/useing_device.gd" type="Script" id=2]
+[ext_resource path="res://audio/normal_sound.mp3" type="AudioStream" id=3]
+[ext_resource path="res://audio/hit_drop.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
@@ -156,6 +158,13 @@ margin_top = 2.0
 margin_right = 66.0
 margin_bottom = 66.0
 texture_normal = SubResource( 12 )
+
+[node name="normal_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="pressed" from="computer_button" to="." method="_on_computer_button_pressed"]
 [connection signal="pressed" from="mobile_button" to="." method="_on_mobile_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assests/background/Jungle tree.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assests/background/jungle_tree_bw.webp" type="Texture" id=9]
 [ext_resource path="res://assests/background/white_mask.webp" type="Texture" id=10]
 [ext_resource path="res://audio/game_soundLevel.mp3" type="AudioStream" id=11]
+[ext_resource path="res://audio/hit_drop.wav" type="AudioStream" id=12]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
@@ -88,6 +89,9 @@ position = Vector2( 432, 656 )
 stream = ExtResource( 11 )
 volume_db = 4.0
 autoplay = true
+
+[node name="pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 
 [connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
