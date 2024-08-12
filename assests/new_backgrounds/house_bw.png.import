@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/danger_Spike.png-d6b4d9b85e417abd355fc27c559f1f4e.stex"
+path="res://.import/house_bw.png-8a0aebb9dff8d9bde38f49c1952bc054.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/enemies/danger_Spike.png"
-dest_files=[ "res://.import/danger_Spike.png-d6b4d9b85e417abd355fc27c559f1f4e.stex" ]
+source_file="res://assests/new_backgrounds/house_bw.png"
+dest_files=[ "res://.import/house_bw.png-8a0aebb9dff8d9bde38f49c1952bc054.stex" ]
 
 [params]
 

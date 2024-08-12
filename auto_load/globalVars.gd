@@ -23,6 +23,7 @@ var my_life = 3
 var current_level:int = 1
 var endless_current:int = 0
 
+
 var collect_types = {
 	"Red": preload("res://scenes/red.tscn"),
 	"Blue": preload("res://scenes/blue.tscn"),
@@ -37,12 +38,16 @@ var none
 
 var level1 = {
 	"color":["Red"],
-	"enemy":["Vspike"]
+	"enemy":["Vspike"],
+	"background_colour": "res://assests/new_backgrounds/tree_colour.png",
+	"background_bw": "res://assests/new_backgrounds/tree_bw.png"
 }
 
 var level2 = {
 	"color":["Green","Blue"],
-	"enemy":["Vspike"]
+	"enemy":["Vspike"],
+	"background_colour": "res://assests/new_backgrounds/house_colour.png",
+	"background_bw": "res://assests/new_backgrounds/house_bw.png"
 	}
 
 var level3 = {
