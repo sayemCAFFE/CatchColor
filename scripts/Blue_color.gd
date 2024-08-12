@@ -12,6 +12,7 @@ func _blue_color_Off():
 
 
 func _on_blue_buttonM_pressed():
+	$pressed.play()
 	GlobalVars.Red_allow = false
 	GlobalVars.Blue_allow = true
 	GlobalVars.Green_allow = false
