@@ -20,7 +20,7 @@ scale = Vector2( 2.02406, 2.01446 )
 texture = ExtResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 248, 565 )
+position = Vector2( 248, 566 )
 
 [node name="floor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 250, 613 )
@@ -44,7 +44,7 @@ wait_time = 1.2
 autostart = true
 
 [node name="collect_speed_timer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 10.0
 
 [node name="colors" type="Node2D" parent="."]
 unique_name_in_owner = true

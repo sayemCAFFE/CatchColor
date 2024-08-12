@@ -3,7 +3,6 @@ extends Node2D
 func _ready():
 	sound_check()
 	$normal_sound.play()
-	GlobalSignals.connect("high_score_show", self, "_high_score_show")
 	$high_scoreLabel.text = "High Score : "+str(GlobalVars.high_score)
 
 

@@ -67,8 +67,9 @@ func _life_lost():
 	$player_hit.play()
 	$lifeLabel.text = "Life : "+str(GlobalVars.my_life)
 	if GlobalVars.my_life == 0:
-		if GlobalVars.my_score > GlobalVars.high_score :
-			GlobalVars.high_score = GlobalVars.my_score
+		if GlobalVars.game_type == "endless_game":
+			if GlobalVars.my_score > GlobalVars.high_score :
+				GlobalVars.high_score = GlobalVars.my_score
 		GlobalVars.speed_range = Vector2(300,300)
 		GlobalVars.endless_speed_range = Vector2(300,300)
 		get_tree().change_scene("res://scenes/game_over.tscn")
