@@ -5,6 +5,7 @@ func _ready():
 
 
 func _on_nextLevel_pressed():
+	$pressed.play()
 	GlobalVars.current_level += 1
 	if GlobalVars.current_level > GlobalVars.levels.size()-1:
 		print("game complete")
@@ -15,4 +16,5 @@ func _on_nextLevel_pressed():
 	
 
 func _on_main_menu_pressed():
+	$pressed.play()
 	get_tree().change_scene("res://scenes/main_menu.tscn")

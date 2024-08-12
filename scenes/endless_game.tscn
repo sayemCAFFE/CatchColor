@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/green_button.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://audio/game_soundEndless.mp3" type="AudioStream" id=9]
-[ext_resource path="res://audio/hit_drop.wav" type="AudioStream" id=10]
+[ext_resource path="res://audio/pressed.wav" type="AudioStream" id=10]
 
 [node name="endless_game" type="Node2D"]
 script = ExtResource( 6 )

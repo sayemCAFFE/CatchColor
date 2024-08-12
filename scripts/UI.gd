@@ -80,6 +80,7 @@ func _score_lost():
 	
 
 func _on_BackButton_pressed():
+	$pressed.play()
 	GlobalVars.speed_range = Vector2(300,300)
 	GlobalVars.endless_speed_range = Vector2(300,300)
 	get_tree().change_scene("res://scenes/main_menu.tscn")
