@@ -25,7 +25,7 @@ func _reset_collect_timer():
 func _drop_item(scene):
 	var item = scene.instance()
 	$"%colors".add_child(item)
-	var random_pos = Vector2(rng.randf_range(10,430), rng.randf_range(0,0))
+	var random_pos = Vector2(rng.randf_range(10,390), rng.randf_range(0,0))
 	item.global_position = Vector2(random_pos.x, random_pos.y)
 	item.linear_velocity.y = rand_range(item.speed_range.x, item.speed_range.y)
 	
@@ -33,7 +33,7 @@ func _drop_item(scene):
 func _drop_color(scene):
 	var item = scene.instance()
 	$"%colors".add_child(item)
-	var random_pos = Vector2(rng.randf_range(10,430), rng.randf_range(0,0))
+	var random_pos = Vector2(rng.randf_range(10,390), rng.randf_range(0,0))
 	item.global_position = Vector2(random_pos.x, random_pos.y)
 	item.linear_velocity.y = rand_range(GlobalVars.endless_speed_range.x, GlobalVars.endless_speed_range.y)
 	
@@ -54,7 +54,13 @@ func _get_enemy():
 	var to_drop = enemy_items[rng]
 	_drop_item(GlobalVars.enemy_types[to_drop])
 
-
+func _get_power_up():
+	var level = GlobalVars.endless_levels[GlobalVars.endless_current]
+	var power_up_items = level["power_up"]
+	var power_up_count = power_up_items.size()
+	var rng = randi() % power_up_count
+	var to_drop = power_up_items[rng]
+	_drop_item(GlobalVars.power_up_types[to_drop])
 
 func _on_CollectTimer_timeout():
 	print("Collect Timer Done")
@@ -74,3 +80,7 @@ func _on_collect_speed_timer_timeout():
 			GlobalVars.endless_speed_range = Vector2(620,620)
 			print(GlobalVars.endless_speed_range)
 	
+
+func _on_power_upTimer_timeout():
+	print("power_up")
+	_get_power_up()

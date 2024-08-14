@@ -9,6 +9,14 @@ func _ready():
 	GlobalSignals.connect("update_score", self, "_update_score")
 	GlobalSignals.connect("score_lost", self, "_score_lost")
 	_reset_collect_timer()
+	if GlobalVars.game_type == "level_game":
+		_level_background()
+
+func _level_background():
+	var texture = load(GlobalVars.levels[GlobalVars.current_level]["background_colour"])
+	$"%background".texture = texture
+	var texture_bw = load(GlobalVars.levels[GlobalVars.current_level]["background_bw"])
+	$"%background2".texture = texture_bw	
 
 func sound_check():
 	if GlobalVars.sound_on == true:
@@ -43,7 +51,7 @@ func _reset_collect_timer():
 func _drop_item(scene):
 	var item = scene.instance()
 	$"%colors".add_child(item)
-	var random_pos = Vector2(rng.randf_range(10,430), rng.randf_range(0,0))
+	var random_pos = Vector2(rng.randf_range(20,370), rng.randf_range(10,10))
 	item.global_position = Vector2(random_pos.x, random_pos.y)
 	item.linear_velocity.y = rand_range(item.speed_range.x, item.speed_range.y)
 	
@@ -51,7 +59,7 @@ func _drop_item(scene):
 func _drop_color(scene):
 	var item = scene.instance()
 	$"%colors".add_child(item)
-	var random_pos = Vector2(rng.randf_range(10,430), rng.randf_range(0,0))
+	var random_pos = Vector2(rng.randf_range(10,370), rng.randf_range(0,0))
 	item.global_position = Vector2(random_pos.x, random_pos.y)
 	item.linear_velocity.y = rand_range(GlobalVars.speed_range.x, GlobalVars.speed_range.y)
 	

@@ -3,7 +3,6 @@ extends Node2D
 func _ready():
 	sound_check()
 	$normal_sound.play()
-	$high_scoreLabel.text = "High Score : "+str(GlobalVars.high_score)
 
 
 func _on_menuButton_pressed():

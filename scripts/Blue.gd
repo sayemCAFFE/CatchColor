@@ -15,6 +15,8 @@ func _on_blueArea_body_entered(body):
 			GlobalSignals.emit_signal("update_score")
 		else:
 			$blueError.visible = true
+			$"%blueCollision".set_deferred("disabled", true)
+			$"%blueCollision2".set_deferred("disabled", true)
 			GlobalSignals.emit_signal("life_lost")
 			GlobalSignals.emit_signal("Sign_show", true)
 			$Timer.start()
@@ -25,7 +27,6 @@ func _on_blueArea_body_entered(body):
 			GlobalSignals.emit_signal("score_lost")
 			queue_free()
 			print("miss")
-
 
 func _on_Timer_timeout():
 	queue_free()

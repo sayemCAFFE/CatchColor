@@ -16,11 +16,13 @@ script = ExtResource( 1 )
 texture = ExtResource( 3 )
 
 [node name="blueCollision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 shape = SubResource( 1 )
 
 [node name="blueArea" type="Area2D" parent="."]
 
 [node name="blueCollision2" type="CollisionShape2D" parent="blueArea"]
+unique_name_in_owner = true
 shape = SubResource( 1 )
 
 [node name="blueError" type="Sprite" parent="."]

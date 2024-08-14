@@ -5,6 +5,7 @@ func _ready():
 	GlobalSignals.connect("Sign_show", self, "_Sign_show")
 	GlobalSignals.connect("life_lost", self, "_life_lost")
 	GlobalSignals.connect("score_lost",self, "_score_lost")
+	GlobalSignals.connect("life_update", self, "_life_update")
 	$Levels.text = "Level : "+str(GlobalVars.current_level)
 	GlobalVars.my_score = 0
 	GlobalVars.my_life = 3
@@ -25,6 +26,10 @@ func sound_check():
 		$error.stream_paused = true
 		$collect.stream_paused = true
 		$player_hit.stream_paused = true
+
+func _life_update():
+	GlobalVars.my_life += 1
+	$lifeLabel.text = "Life : "+str(GlobalVars.my_life) 
 
 func game_device():
 	if GlobalVars.game_device == "computer_game":

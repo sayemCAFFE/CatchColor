@@ -23,6 +23,7 @@ var my_life = 3
 var current_level:int = 1
 var endless_current:int = 0
 
+
 var collect_types = {
 	"Red": preload("res://scenes/red.tscn"),
 	"Blue": preload("res://scenes/blue.tscn"),
@@ -33,16 +34,24 @@ var enemy_types = {
 	"Vspike": preload("res://scenes/vspike.tscn")
 }
 
+var power_up_types = {
+	"life_power": preload("res://scenes/life.tscn")
+}
+
 var none
 
 var level1 = {
 	"color":["Red"],
-	"enemy":["Vspike"]
+	"enemy":["Vspike"],
+	"background_colour": "res://assests/new_backgrounds/tree_colour.png",
+	"background_bw": "res://assests/new_backgrounds/tree_bw.png"
 }
 
 var level2 = {
 	"color":["Green","Blue"],
-	"enemy":["Vspike"]
+	"enemy":["Vspike"],
+	"background_colour": "res://assests/new_backgrounds/house_colour.png",
+	"background_bw": "res://assests/new_backgrounds/house_bw.png"
 	}
 
 var level3 = {
@@ -62,7 +71,8 @@ var level5 = {
 
 var endless_game = {
 	"color":["Red","Green","Blue"],
-	"enemy":["Vspike"]
+	"enemy":["Vspike"],
+	"power_up":["life_power"]
 	}
 
 var levels = [none,level1,level2,level3,level4,level5]

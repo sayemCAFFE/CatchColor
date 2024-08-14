@@ -13,7 +13,7 @@
 [ext_resource path="res://audio/pressed.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
-size = 70
+size = 60
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -28,7 +28,7 @@ font_data = ExtResource( 1 )
 bg_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 28
+size = 22
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
@@ -42,7 +42,7 @@ font_data = ExtResource( 1 )
 bg_color = Color( 0.0509804, 0.109804, 0.431373, 1 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 28
+size = 21
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
@@ -56,7 +56,7 @@ font_data = ExtResource( 1 )
 bg_color = Color( 0.0509804, 0.109804, 0.431373, 1 )
 
 [sub_resource type="DynamicFont" id=17]
-size = 28
+size = 22
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=18]
@@ -73,14 +73,13 @@ bg_color = Color( 0, 0.517647, 0.0470588, 1 )
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 504.0
+margin_right = 408.0
 margin_bottom = 704.0
 color = Color( 0.521569, 1, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = -8.0
 margin_top = 24.0
-margin_right = 504.0
+margin_right = 408.0
 margin_bottom = 103.0
 custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -92,24 +91,24 @@ align = 1
 valign = 1
 
 [node name="BackButton" type="TextureButton" parent="."]
-margin_left = 27.0
-margin_top = 616.0
-margin_right = 91.0
-margin_bottom = 680.0
+margin_left = 14.0
+margin_top = 619.0
+margin_right = 78.0
+margin_bottom = 683.0
 texture_normal = ExtResource( 5 )
 
 [node name="first_page_button" type="TextureButton" parent="."]
-margin_left = 459.0
+margin_left = 362.0
 margin_top = 397.0
-margin_right = 537.0
+margin_right = 440.0
 margin_bottom = 517.0
 rect_scale = Vector2( 0.485866, 0.424562 )
 texture_normal = ExtResource( 6 )
 
 [node name="page" type="Label" parent="."]
-margin_left = 232.0
+margin_left = 192.0
 margin_top = 624.0
-margin_right = 272.0
+margin_right = 232.0
 margin_bottom = 681.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 11 )
@@ -126,15 +125,15 @@ scale = Vector2( 1, 1.20588 )
 texture = ExtResource( 4 )
 
 [node name="right_left" type="Sprite" parent="computers"]
-position = Vector2( 59.625, 221 )
-scale = Vector2( 1.625, 1.625 )
+position = Vector2( 55.625, 221 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 
 [node name="right_left_label" type="Label" parent="computers"]
-margin_left = 120.0
-margin_top = 199.0
-margin_right = 499.0
-margin_bottom = 247.0
+margin_left = 112.0
+margin_top = 198.0
+margin_right = 401.0
+margin_bottom = 246.0
 custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -145,9 +144,9 @@ align = 1
 valign = 1
 
 [node name="computer" type="Label" parent="computers"]
-margin_left = 60.0
+margin_left = 13.0
 margin_top = 126.0
-margin_right = 439.0
+margin_right = 392.0
 margin_bottom = 177.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -162,7 +161,7 @@ valign = 1
 [node name="numberLabel" type="Label" parent="computers"]
 margin_left = 136.0
 margin_top = 273.0
-margin_right = 496.0
+margin_right = 402.0
 margin_bottom = 313.0
 custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -176,10 +175,10 @@ valign = 1
 [node name="mobiles" type="Node2D" parent="."]
 
 [node name="mobile" type="Label" parent="mobiles"]
-margin_left = 60.0
-margin_top = 364.0
-margin_right = 439.0
-margin_bottom = 415.0
+margin_left = 13.0
+margin_top = 342.0
+margin_right = 392.0
+margin_bottom = 393.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
@@ -191,25 +190,25 @@ align = 1
 valign = 1
 
 [node name="press" type="Sprite" parent="mobiles"]
-position = Vector2( 37, 567 )
+position = Vector2( 37, 551 )
 scale = Vector2( 1.22581, 1.26534 )
 texture = ExtResource( 9 )
 
 [node name="right" type="Sprite" parent="mobiles"]
-position = Vector2( 98, 488 )
-scale = Vector2( 1.625, 1.625 )
+position = Vector2( 84, 472 )
+scale = Vector2( 1.4, 1.4 )
 texture = ExtResource( 7 )
 
 [node name="left" type="Sprite" parent="mobiles"]
-position = Vector2( 32, 488 )
-scale = Vector2( 1.625, 1.625 )
+position = Vector2( 27, 472 )
+scale = Vector2( 1.4, 1.4 )
 texture = ExtResource( 8 )
 
 [node name="right_left_label" type="Label" parent="mobiles"]
-margin_left = 129.0
-margin_top = 465.0
-margin_right = 498.0
-margin_bottom = 513.0
+margin_left = 111.0
+margin_top = 452.0
+margin_right = 403.0
+margin_bottom = 492.0
 custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -220,10 +219,10 @@ align = 1
 valign = 1
 
 [node name="numberLabel" type="Label" parent="mobiles"]
-margin_left = 80.0
-margin_top = 536.0
-margin_right = 497.0
-margin_bottom = 584.0
+margin_left = 85.0
+margin_top = 525.0
+margin_right = 398.0
+margin_bottom = 568.0
 custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2

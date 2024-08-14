@@ -16,6 +16,8 @@ func _on_RedArea_body_entered(body):
 		else:
 			GlobalSignals.emit_signal("Sign_show", true)
 			$redError.visible = true
+			$"%RedCollision".set_deferred("disabled", true)
+			$"%RedCollision2".set_deferred("disabled", true)
 			GlobalSignals.emit_signal("life_lost")
 			$Timer.start()
 	if body.is_in_group("floor"):
@@ -25,6 +27,7 @@ func _on_RedArea_body_entered(body):
 			GlobalSignals.emit_signal("score_lost")
 			queue_free()
 			print("miss")
+
 
 
 func _on_Timer_timeout():

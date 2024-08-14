@@ -15,6 +15,7 @@ signal update_score()
 signal score_lost()
 
 signal life_lost()
+signal life_update()
 
 signal move_right()
 signal right_stop()
