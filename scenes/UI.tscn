@@ -10,7 +10,7 @@
 [ext_resource path="res://audio/Powerup.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 36
 font_data = ExtResource( 1 )
 
 [sub_resource type="StreamTexture" id=6]

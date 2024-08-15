@@ -74,10 +74,10 @@ position = Vector2( -17, 303 )
 rotation = 1.56671
 scale = Vector2( 4.44177, 1 )
 
-[node name="RedButton" parent="." instance=ExtResource( 4 )]
+[node name="red_button" parent="." instance=ExtResource( 4 )]
 position = Vector2( 44, 655 )
 
-[node name="Blue_button" parent="." instance=ExtResource( 5 )]
+[node name="blue_button" parent="." instance=ExtResource( 5 )]
 position = Vector2( 202, 658 )
 
 [node name="green_button" parent="." instance=ExtResource( 7 )]

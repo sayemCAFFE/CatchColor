@@ -34,12 +34,12 @@ func sound_buttons_state():
 	$"%on_icon".visible = GlobalVars.sound_on
 	$"%on_icon2".visible = not GlobalVars.sound_on
 
-func _on_On_pressed():
+func _on_on_pressed():
 	GlobalVars.sound_on = true
 	sound_check()
 	sound_buttons_state()
 
-func _on_Off_pressed():
+func _on_off_pressed():
 	GlobalVars.sound_on = false
 	sound_check()
 	sound_buttons_state()

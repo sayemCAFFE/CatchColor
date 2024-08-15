@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/blue.gd" type="Script" id=1]
-[ext_resource path="res://assests/colors/blueError.png" type="Texture" id=2]
+[ext_resource path="res://assests/colors/blue_error.png" type="Texture" id=2]
 [ext_resource path="res://assests/colors/blue_paint.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18, 30 )
 
-[node name="Blue" type="RigidBody2D" groups=["color"]]
+[node name="blue" type="RigidBody2D" groups=["color"]]
 collision_layer = 2
 gravity_scale = 0.0
 script = ExtResource( 1 )

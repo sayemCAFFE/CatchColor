@@ -68,7 +68,7 @@ load_path = "res://.import/back_button.png-fc667308579cc9d3a1d4b66657bae9bd.stex
 [node name="settings" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="color_rect" type="ColorRect" parent="."]
 margin_right = 408.0
 margin_bottom = 704.0
 color = Color( 0.14902, 0.145098, 0.168627, 1 )
@@ -94,6 +94,8 @@ align = 1
 valign = 1
 
 [node name="computer_button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = 188.0
 margin_right = 216.0
@@ -104,6 +106,8 @@ custom_styles/normal = SubResource( 5 )
 text = "keyboard"
 
 [node name="mobile_button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 233.0
 margin_top = 188.0
 margin_right = 400.0
@@ -114,7 +118,9 @@ custom_styles/normal = SubResource( 4 )
 text = "touch"
 icon_align = 1
 
-[node name="On" type="Button" parent="."]
+[node name="on" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 20.0
 margin_top = 384.0
 margin_right = 173.0
@@ -126,13 +132,15 @@ custom_styles/normal = SubResource( 10 )
 text = "On"
 icon_align = 1
 
-[node name="on_icon" type="Sprite" parent="On"]
+[node name="on_icon" type="Sprite" parent="on"]
 unique_name_in_owner = true
 position = Vector2( 80.0001, 24 )
 scale = Vector2( 1.6, 0.533333 )
 texture = SubResource( 16 )
 
-[node name="Off" type="Button" parent="."]
+[node name="off" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 223.0
 margin_top = 384.0
 margin_right = 384.0
@@ -144,8 +152,9 @@ custom_styles/normal = SubResource( 15 )
 text = "Off"
 icon_align = 1
 
-[node name="on_icon2" type="Sprite" parent="Off"]
+[node name="on_icon2" type="Sprite" parent="off"]
 unique_name_in_owner = true
+visible = false
 position = Vector2( 81.0001, 24 )
 scale = Vector2( 1.61666, 0.533333 )
 texture = SubResource( 17 )
@@ -167,6 +176,6 @@ stream = ExtResource( 4 )
 
 [connection signal="pressed" from="computer_button" to="." method="_on_computer_button_pressed"]
 [connection signal="pressed" from="mobile_button" to="." method="_on_mobile_button_pressed"]
-[connection signal="pressed" from="On" to="." method="_on_On_pressed"]
-[connection signal="pressed" from="Off" to="." method="_on_Off_pressed"]
+[connection signal="pressed" from="on" to="." method="_on_on_pressed"]
+[connection signal="pressed" from="off" to="." method="_on_off_pressed"]
 [connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

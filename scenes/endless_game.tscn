@@ -36,10 +36,10 @@ position = Vector2( -17, 303 )
 rotation = 1.56671
 scale = Vector2( 4.44177, 1 )
 
-[node name="CollectTimer" type="Timer" parent="."]
+[node name="collect_timer" type="Timer" parent="."]
 autostart = true
 
-[node name="EnemyTimer" type="Timer" parent="."]
+[node name="enemy_timer" type="Timer" parent="."]
 wait_time = 1.5
 autostart = true
 
@@ -49,10 +49,10 @@ wait_time = 9.0
 [node name="colors" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="RedButton" parent="." instance=ExtResource( 4 )]
+[node name="red_button" parent="." instance=ExtResource( 4 )]
 position = Vector2( 45, 656 )
 
-[node name="Blue_button" parent="." instance=ExtResource( 5 )]
+[node name="blue_button" parent="." instance=ExtResource( 5 )]
 position = Vector2( 210, 656 )
 
 [node name="green_button" parent="." instance=ExtResource( 7 )]
@@ -68,11 +68,11 @@ autoplay = true
 [node name="pressed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 
-[node name="power_upTimer" type="Timer" parent="."]
-wait_time = 35.0
+[node name="power_up_timer" type="Timer" parent="."]
+wait_time = 20.0
 autostart = true
 
-[connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
-[connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
+[connection signal="timeout" from="collect_timer" to="." method="_on_collect_timer_timeout"]
+[connection signal="timeout" from="enemy_timer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="collect_speed_timer" to="." method="_on_collect_speed_timer_timeout"]
-[connection signal="timeout" from="power_upTimer" to="." method="_on_power_upTimer_timeout"]
+[connection signal="timeout" from="power_up_timer" to="." method="_on_power_up_timer_timeout"]

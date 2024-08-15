@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var collect_timer = $CollectTimer
+onready var collect_timer = $collect_timer
 
 var rng = RandomNumberGenerator.new()
 
@@ -62,12 +62,12 @@ func _get_power_up():
 	var to_drop = power_up_items[rng]
 	_drop_item(GlobalVars.power_up_types[to_drop])
 
-func _on_CollectTimer_timeout():
+func _on_collect_timer_timeout():
 	print("Collect Timer Done")
 	_get_collect()
 
 
-func _on_EnemyTimer_timeout():
+func _on_enemy_timer_timeout():
 	_get_enemy()
 
 
@@ -81,6 +81,6 @@ func _on_collect_speed_timer_timeout():
 			print(GlobalVars.endless_speed_range)
 	
 
-func _on_power_upTimer_timeout():
+func _on_power_up_timer_timeout():
 	print("power_up")
 	_get_power_up()

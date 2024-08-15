@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/greenError.png-3c2417940bd11f1366ee08a01d08e4b5.stex"
+path="res://.import/red_error.png-04b6c299d3abeaf0f5ef78ae04a32b5a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/colors/greenError.png"
-dest_files=[ "res://.import/greenError.png-3c2417940bd11f1366ee08a01d08e4b5.stex" ]
+source_file="res://assests/colors/red_error.png"
+dest_files=[ "res://.import/red_error.png-04b6c299d3abeaf0f5ef78ae04a32b5a.stex" ]
 
 [params]
 
