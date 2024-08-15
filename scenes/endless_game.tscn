@@ -40,7 +40,7 @@ scale = Vector2( 4.44177, 1 )
 autostart = true
 
 [node name="EnemyTimer" type="Timer" parent="."]
-wait_time = 1.2
+wait_time = 1.5
 autostart = true
 
 [node name="collect_speed_timer" type="Timer" parent="."]
@@ -69,7 +69,7 @@ autoplay = true
 stream = ExtResource( 10 )
 
 [node name="power_upTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 40.0
 autostart = true
 
 [connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
