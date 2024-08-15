@@ -29,6 +29,7 @@ func sound_check():
 
 func _life_update():
 	GlobalVars.my_life += 1
+	$life_power.play()
 	$lifeLabel.text = "Life : "+str(GlobalVars.my_life) 
 
 func game_device():

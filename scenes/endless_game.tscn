@@ -69,7 +69,7 @@ autoplay = true
 stream = ExtResource( 10 )
 
 [node name="power_upTimer" type="Timer" parent="."]
-wait_time = 40.0
+wait_time = 35.0
 autostart = true
 
 [connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
