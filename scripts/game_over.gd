@@ -8,7 +8,7 @@ func _ready():
 
 func _on_menuButton_pressed():
 	$pressed.play()
-	get_tree().change_scene("res://scenes/Main_menu.tscn")
+	get_tree().change_scene("res://scenes/main_menu.tscn")
 
 func sound_check():
 	if GlobalVars.sound_on == true:

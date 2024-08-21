@@ -80,7 +80,13 @@ func _get_enemy():
 	var to_drop = enemy_items[rng]
 	_drop_item(GlobalVars.enemy_types[to_drop])
 
-
+func _get_power_up():
+	var level = GlobalVars.endless_levels[GlobalVars.endless_current]
+	var power_up_items = level["power_up"]
+	var power_up_count = power_up_items.size()
+	var rng = randi() % power_up_count
+	var to_drop = power_up_items[rng]
+	_drop_item(GlobalVars.power_up_types[to_drop])
 
 func _on_CollectTimer_timeout():
 	print("Collect Timer Done")
@@ -89,3 +95,7 @@ func _on_CollectTimer_timeout():
 
 func _on_EnemyTimer_timeout():
 	_get_enemy()
+
+
+func _on_power_up_timer_timeout():
+	_get_power_up()

@@ -43,6 +43,7 @@ var none
 var level1 = {
 	"color":["Red"],
 	"enemy":["Vspike"],
+	"power_up":["life_power"],
 	"background_colour": "res://assests/new_backgrounds/tree_colour.png",
 	"background_bw": "res://assests/new_backgrounds/tree_bw.png"
 }

@@ -93,5 +93,10 @@ autoplay = true
 [node name="pressed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 
+[node name="power_up_timer" type="Timer" parent="."]
+wait_time = 35.0
+autostart = true
+
 [connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
+[connection signal="timeout" from="power_up_timer" to="." method="_on_power_up_timer_timeout"]

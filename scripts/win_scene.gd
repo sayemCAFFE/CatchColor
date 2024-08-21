@@ -3,7 +3,6 @@ extends Node2D
 func _ready():
 	pass
 
-
 func _on_nextLevel_pressed():
 	$pressed.play()
 	GlobalVars.current_level += 1

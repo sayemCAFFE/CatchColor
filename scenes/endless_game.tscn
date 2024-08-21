@@ -15,15 +15,15 @@
 script = ExtResource( 6 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 202.992, 351.469 )
-scale = Vector2( 1.64006, 2.01446 )
+position = Vector2( 202.992, 359.469 )
+scale = Vector2( 1.64006, 2.06018 )
 texture = ExtResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 202, 566 )
+position = Vector2( 202, 571 )
 
 [node name="floor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 250, 613 )
+position = Vector2( 250, 618 )
 scale = Vector2( 3.24, 0.796124 )
 
 [node name="floor2" parent="." instance=ExtResource( 3 )]
@@ -50,13 +50,13 @@ wait_time = 9.0
 unique_name_in_owner = true
 
 [node name="red_button" parent="." instance=ExtResource( 4 )]
-position = Vector2( 45, 656 )
+position = Vector2( 45, 670 )
 
 [node name="blue_button" parent="." instance=ExtResource( 5 )]
-position = Vector2( 210, 656 )
+position = Vector2( 210, 670 )
 
 [node name="green_button" parent="." instance=ExtResource( 7 )]
-position = Vector2( 360, 656 )
+position = Vector2( 360, 670 )
 
 [node name="UI" parent="." instance=ExtResource( 8 )]
 
@@ -69,7 +69,7 @@ autoplay = true
 stream = ExtResource( 10 )
 
 [node name="power_up_timer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 35.0
 autostart = true
 
 [connection signal="timeout" from="collect_timer" to="." method="_on_collect_timer_timeout"]
