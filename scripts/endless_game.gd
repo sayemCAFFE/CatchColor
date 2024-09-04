@@ -8,6 +8,7 @@ func _ready():
 	sound_check()
 	_reset_collect_timer()
 	$collect_speed_timer.start()
+	$new_enemy.start()
 
 func sound_check():
 	if GlobalVars.sound_on == true:
@@ -47,7 +48,7 @@ func _get_collect():
 	_drop_color(GlobalVars.collect_types[to_drop])
 
 func _get_enemy():
-	var level = GlobalVars.levels[GlobalVars.current_level]
+	var level = GlobalVars.endless_levels[GlobalVars.endless_current]
 	var enemy_items = level["enemy"]
 	var enemy_count = enemy_items.size()
 	var rng = randi() % enemy_count
@@ -84,3 +85,12 @@ func _on_collect_speed_timer_timeout():
 func _on_power_up_timer_timeout():
 	print("power_up")
 	_get_power_up()
+
+
+func _on_new_enemy_timeout():
+	GlobalVars.endless_current += 1
+	if GlobalVars.endless_current > GlobalVars.endless_levels.size()-1:
+		print("game complete")
+		GlobalVars.endless_current = 0
+		
+

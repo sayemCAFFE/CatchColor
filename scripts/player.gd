@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var direction := Vector2.ZERO
-export var speed = 450
+export var speed = 350
 
 var gravity = 1200
 var jump_speed = -500
@@ -14,6 +14,7 @@ func _ready():
 	GlobalSignals.connect("right_stop", self, "_right_stop")
 	GlobalSignals.connect("move_left",self, "_move_left")
 	GlobalSignals.connect("left_stop", self, "_left_stop")
+	GlobalSignals.connect("speed_power", self, "_speed_power")
 
 func _move_right():
 	mobile_move_right = true
@@ -26,6 +27,11 @@ func _move_left():
 
 func _left_stop():
 	mobile_move_left = false
+
+func _speed_power():
+	if speed <  600:
+		speed += 50
+		
 
 func _process(delta):
 	

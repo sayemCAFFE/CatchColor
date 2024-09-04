@@ -2,7 +2,7 @@
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
-[ext_resource path="res://assests/new_backgrounds/sky_background.png" type="Texture" id=3]
+[ext_resource path="res://assests/main_background/colorful/sky_background.png" type="Texture" id=3]
 [ext_resource path="res://assests/buttons/color_button.png" type="Texture" id=4]
 [ext_resource path="res://audio/normal_sound.mp3" type="AudioStream" id=5]
 [ext_resource path="res://audio/pressed.wav" type="AudioStream" id=6]

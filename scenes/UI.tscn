@@ -67,19 +67,25 @@ texture_normal = ExtResource( 3 )
 
 [node name="right" type="TextureButton" parent="."]
 unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 325.0
 margin_top = 502.0
-margin_right = 360.0
-margin_bottom = 532.0
+margin_right = -45.0
+margin_bottom = -188.0
 rect_scale = Vector2( 1.9033, 1.85075 )
 texture_normal = SubResource( 6 )
 
 [node name="left" type="TextureButton" parent="."]
 unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 9.0
 margin_top = 500.0
-margin_right = 44.0
-margin_bottom = 530.0
+margin_right = -361.0
+margin_bottom = -190.0
 rect_scale = Vector2( 1.9033, 1.85075 )
 texture_normal = ExtResource( 4 )
 

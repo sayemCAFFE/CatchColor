@@ -1,11 +1,11 @@
 extends RigidBody2D
 
-var speed_range = Vector2(400,450)
+var speed_range = Vector2(200,300)
 
 func _ready():
 	pass
 
-func _on_enemyArea_body_entered(body):
+func _on_smile_enemy_body_entered(body):
 	if body.is_in_group("player"):
 		queue_free()
 		GlobalSignals.emit_signal("life_lost")

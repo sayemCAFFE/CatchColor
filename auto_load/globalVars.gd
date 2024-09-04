@@ -31,11 +31,14 @@ var collect_types = {
 }
 
 var enemy_types = {
-	"Vspike": preload("res://scenes/vspike.tscn")
+	"Vspike": preload("res://scenes/vspike.tscn"),
+	"smile_enemy": preload("res://scenes/smile_enemy.tscn"),
+	"shooter": preload("res://scenes/shooter_enemy.tscn")
 }
 
 var power_up_types = {
-	"life_power": preload("res://scenes/life.tscn")
+	"life_power": preload("res://scenes/life.tscn"),
+	"speed_power": preload("res://scenes/speed.tscn")
 }
 
 var none
@@ -43,39 +46,61 @@ var none
 var level1 = {
 	"color":["Red"],
 	"enemy":["Vspike"],
-	"power_up":["life_power"],
-	"background_colour": "res://assests/new_backgrounds/tree_colour.png",
-	"background_bw": "res://assests/new_backgrounds/tree_bw.png"
+	"power_up":["speed_power"],
+	"background_colour": "res://assests/main_background/colorful/background.png",
+	"background_bw": "res://assests/main_background/black_white/background-modified.png"
 }
 
 var level2 = {
 	"color":["Green","Blue"],
-	"enemy":["Vspike"],
-	"background_colour": "res://assests/new_backgrounds/house_colour.png",
-	"background_bw": "res://assests/new_backgrounds/house_bw.png"
+	"enemy":["smile_enemy"],
+	"power_up":["speed_power"],
+	"background_colour": "res://assests/main_background/colorful/blue_home.png",
+	"background_bw": "res://assests/main_background/black_white/blue_home-modified.png"
 	}
 
 var level3 = {
 	"color":["Red","Blue"],
-	"enemy":["Vspike"]
+	"enemy":["Vspike","smile_enemy"],
+	"power_up":["life_power"],
+	"background_colour": "res://assests/main_background/colorful/color_background.png",
+	"background_bw": "res://assests/main_background/black_white/color_background-modified.png"
 	}
 
 var level4 = {
 	"color":["Green","Red"],
-	"enemy":["Vspike"]
+	"enemy":["shooter"],
+	"power_up":["life_power"],
+	"background_colour": "res://assests/main_background/colorful/tree_colour.png",
+	"background_bw": "res://assests/main_background/black_white/tree_bw.png"
 	}
 
 var level5 = {
 	"color":["Red","Green","Blue"],
-	"enemy":["Vspike"]
+	"enemy":["Vspike","shooter"],
+	"power_up":["life_power","speed_power"],
+	"background_colour": "res://assests/main_background/colorful/tree.png",
+	"background_bw": "res://assests/main_background/black_white/tree-modified.png"
 	}
 
-var endless_game = {
+var endless_game1 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["Vspike"],
-	"power_up":["life_power"]
+	"power_up":["life_power","speed_power"]
+	}
+
+var endless_game2 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["smile_enemy"],
+	"power_up":["life_power","speed_power"]
+	}
+
+var endless_game3 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["shooter"],
+	"power_up":["life_power","speed_power"]
 	}
 
 var levels = [none,level1,level2,level3,level4,level5]
 
-var endless_levels = [endless_game]
+var endless_levels = [endless_game1,endless_game2,endless_game3]

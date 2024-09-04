@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	pass
+	$normal_sound.play()
 
 func _on_nextLevel_pressed():
 	$pressed.play()

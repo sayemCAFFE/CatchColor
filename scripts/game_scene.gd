@@ -1,10 +1,11 @@
 extends Node2D
 
-onready var collect_timer = $CollectTimer
+onready var collect_timer = $"%CollectTimer"
 
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	$win_scene.visible = false
 	sound_check()
 	GlobalSignals.connect("update_score", self, "_update_score")
 	GlobalSignals.connect("score_lost", self, "_score_lost")
@@ -16,27 +17,29 @@ func _level_background():
 	var texture = load(GlobalVars.levels[GlobalVars.current_level]["background_colour"])
 	$"%background".texture = texture
 	var texture_bw = load(GlobalVars.levels[GlobalVars.current_level]["background_bw"])
-	$"%background2".texture = texture_bw	
+	$"%background2".texture = texture_bw
 
 func sound_check():
 	if GlobalVars.sound_on == true:
-		$game_sound.stream_paused = false
-		$pressed.stream_paused = false
+		$"%game_sound".stream_paused = false
+		$"%pressed".stream_paused = false
 	if GlobalVars.sound_on == false:
-		$pressed.stream_paused = true
-		$game_sound.stream_paused = true
+		$"%pressed".stream_paused = true
+		$"%game_sound".stream_paused = true
 
 func _update_score():
 	if GlobalVars.game_type == "level_game":
 		$"%backgroundcolor".scale.y += 0.05
-		if $"%backgroundcolor".scale.y >= 1.0:
+		if $"%backgroundcolor".scale.y >= 0.95:
+			$win_scene.visible = true
+			$game.queue_free()
 			if GlobalVars.speed_range < Vector2(620,620):
 				GlobalVars.speed_range += Vector2(20,20)
 				print(GlobalVars.speed_range)
 			else:
 				GlobalVars.speed_range = Vector2(620,620)
 				print(GlobalVars.speed_range)
-			get_tree().change_scene("res://scenes/win_scene.tscn")
+
 
 func _score_lost():
 	if GlobalVars.game_type == "level_game":
@@ -95,7 +98,6 @@ func _on_CollectTimer_timeout():
 
 func _on_EnemyTimer_timeout():
 	_get_enemy()
-
 
 func _on_power_up_timer_timeout():
 	_get_power_up()

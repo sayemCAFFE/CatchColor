@@ -70,6 +70,7 @@ four={
 2d_physics/layer_2="color"
 2d_physics/layer_3="enemy"
 2d_physics/layer_4="power_up"
+2d_physics/layer_5="enemy_bullet"
 
 [physics]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assests/background/sky.png" type="Texture" id=1]
+[ext_resource path="res://assests/main_background/colorful/sky.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/floor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/red_button.tscn" type="PackedScene" id=4]
@@ -27,12 +27,12 @@ position = Vector2( 250, 618 )
 scale = Vector2( 3.24, 0.796124 )
 
 [node name="floor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 415, 307 )
+position = Vector2( 427, 308 )
 rotation = 1.56671
 scale = Vector2( 4.64161, 1 )
 
 [node name="floor3" parent="." instance=ExtResource( 3 )]
-position = Vector2( -17, 303 )
+position = Vector2( -30, 304 )
 rotation = 1.56671
 scale = Vector2( 4.44177, 1 )
 
@@ -69,10 +69,14 @@ autoplay = true
 stream = ExtResource( 10 )
 
 [node name="power_up_timer" type="Timer" parent="."]
-wait_time = 35.0
+wait_time = 30.0
 autostart = true
+
+[node name="new_enemy" type="Timer" parent="."]
+wait_time = 26.0
 
 [connection signal="timeout" from="collect_timer" to="." method="_on_collect_timer_timeout"]
 [connection signal="timeout" from="enemy_timer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="collect_speed_timer" to="." method="_on_collect_speed_timer_timeout"]
 [connection signal="timeout" from="power_up_timer" to="." method="_on_power_up_timer_timeout"]
+[connection signal="timeout" from="new_enemy" to="." method="_on_new_enemy_timeout"]
