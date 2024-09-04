@@ -32,6 +32,7 @@ func _update_score():
 		$"%backgroundcolor".scale.y += 0.05
 		if $"%backgroundcolor".scale.y >= 0.95:
 			$win_scene.visible = true
+			GlobalSignals.emit_signal("win_sound")
 			$game.queue_free()
 			if GlobalVars.speed_range < Vector2(620,620):
 				GlobalVars.speed_range += Vector2(20,20)

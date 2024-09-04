@@ -24,3 +24,5 @@ signal move_left()
 signal left_stop()
 
 signal speed_power()
+
+signal win_sound()

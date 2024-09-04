@@ -23,7 +23,6 @@ var my_life = 3
 var current_level:int = 1
 var endless_current:int = 0
 
-
 var collect_types = {
 	"Red": preload("res://scenes/red.tscn"),
 	"Blue": preload("res://scenes/blue.tscn"),

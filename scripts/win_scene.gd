@@ -1,7 +1,11 @@
 extends Node2D
 
 func _ready():
-	pass
+	GlobalSignals.connect("win_sound", self, "_win_sound")
+
+func _win_sound():
+	$normal_sound.stream_paused = false
+	$normal_sound.play()
 
 func _on_nextLevel_pressed():
 	$pressed.play()
