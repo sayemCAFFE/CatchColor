@@ -86,6 +86,7 @@ stream = SubResource( 9 )
 [node name="normal_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = 10.0
+stream_paused = true
 
 [connection signal="pressed" from="nextLevel" to="." method="_on_nextLevel_pressed"]
 [connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]
