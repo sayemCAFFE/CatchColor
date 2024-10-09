@@ -9,6 +9,7 @@ func _ready():
 	sound_check()
 	GlobalSignals.connect("update_score", self, "_update_score")
 	GlobalSignals.connect("score_lost", self, "_score_lost")
+	GlobalSignals.connect("all_color_lost",self, "_all_color_lost")
 	_reset_collect_timer()
 	if GlobalVars.game_type == "level_game":
 		_level_background()
@@ -18,6 +19,9 @@ func _level_background():
 	$"%background".texture = texture
 	var texture_bw = load(GlobalVars.levels[GlobalVars.current_level]["background_bw"])
 	$"%background2".texture = texture_bw
+
+func _all_color_lost():
+	$"%backgroundcolor".scale.y = 0.00
 
 func sound_check():
 	if GlobalVars.sound_on == true:

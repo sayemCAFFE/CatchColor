@@ -26,3 +26,6 @@ signal left_stop()
 signal speed_power()
 
 signal win_sound()
+
+signal vise_verse_do()
+signal all_color_lost()

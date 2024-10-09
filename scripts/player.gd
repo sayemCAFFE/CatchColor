@@ -9,12 +9,21 @@ var jump_speed = -500
 var mobile_move_right = false
 var mobile_move_left = false
 
+var left_to_right = false
+var right_to_left = false
+
 func _ready():
 	GlobalSignals.connect("move_right", self, "_move_right")
 	GlobalSignals.connect("right_stop", self, "_right_stop")
 	GlobalSignals.connect("move_left",self, "_move_left")
 	GlobalSignals.connect("left_stop", self, "_left_stop")
 	GlobalSignals.connect("speed_power", self, "_speed_power")
+	GlobalSignals.connect("vise_verse_do",self, "_vise_verse_do")
+
+func _vise_verse_do():
+	$vise_varse_time.start()
+	left_to_right = true
+	right_to_left = true
 
 func _move_right():
 	mobile_move_right = true
@@ -38,11 +47,16 @@ func _process(delta):
 	var direction = Vector2.ZERO
 	
 	if Input.is_action_pressed("left"):
-		direction.x = -1
-		
+		if left_to_right == false:
+			direction.x = -1
+		if left_to_right == true:
+			direction.x = 1
 	if Input.is_action_pressed("right"):
-		direction.x = 1
-		
+		if right_to_left == false:
+			direction.x = 1
+		if right_to_left == true:
+			direction.x = -1
+			
 	if mobile_move_right == true:
 		direction.x = 1
 	
@@ -77,8 +91,8 @@ func _process(delta):
 		GlobalSignals.emit_signal("red_color_Off")
 		GlobalSignals.emit_signal("blue_color_Off")
 		
-	
 
-
-
-
+func _on_vise_varse_time_timeout():
+	$vise_varse_time.stop()
+	left_to_right = false
+	right_to_left = false

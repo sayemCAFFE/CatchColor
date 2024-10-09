@@ -32,7 +32,9 @@ var collect_types = {
 var enemy_types = {
 	"Vspike": preload("res://scenes/vspike.tscn"),
 	"smile_enemy": preload("res://scenes/smile_enemy.tscn"),
-	"shooter": preload("res://scenes/shooter_enemy.tscn")
+	"shooter": preload("res://scenes/shooter_enemy.tscn"),
+	"vise_varse":preload("res://scenes/vise_verse.tscn"),
+	"all_color_lost": preload("res://scenes/color_lost.tscn")
 }
 
 var power_up_types = {
@@ -44,7 +46,7 @@ var none
 
 var level1 = {
 	"color":["Red"],
-	"enemy":["Vspike"],
+	"enemy":["Vspike","all_color_lost"],
 	"power_up":["speed_power"],
 	"background_colour": "res://assests/main_background/colorful/background.png",
 	"background_bw": "res://assests/main_background/black_white/background-modified.png"
@@ -84,7 +86,7 @@ var level5 = {
 
 var endless_game1 = {
 	"color":["Red","Green","Blue"],
-	"enemy":["Vspike"],
+	"enemy":["Vspike","vise_varse"],
 	"power_up":["life_power","speed_power"]
 	}
 
