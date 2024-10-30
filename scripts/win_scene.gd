@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	GlobalSignals.connect("win_sound", self, "_win_sound")
+	
 
 func _win_sound():
 	$normal_sound.stream_paused = false

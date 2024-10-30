@@ -10,7 +10,7 @@ func _ready():
 	GlobalVars.my_score = 0
 	GlobalVars.my_life = 3
 	GlobalSignals.connect("high_score_show", self, "_high_score_show")
-	$high_score.text = "High Score : "+str(GlobalVars.high_score)
+	$high_score.text = ""+str(GlobalVars.high_score)
 	game_type()
 	game_device()
 	sound_check()
@@ -30,7 +30,7 @@ func sound_check():
 func _life_update():
 	GlobalVars.my_life += 1
 	$life_power.play()
-	$lifeLabel.text = "Life : "+str(GlobalVars.my_life) 
+	$lifeLabel.text = ""+str(GlobalVars.my_life) 
 
 func game_device():
 	if GlobalVars.game_device == "computer_game":
@@ -65,13 +65,13 @@ func _Sign_show(state):
 
 func _update_score():
 	GlobalVars.my_score += 1
-	$scoreLabel.text = "Score : "+str(GlobalVars.my_score)
+	$scoreLabel.text = ""+str(GlobalVars.my_score)
 
 
 func _life_lost():
 	GlobalVars.my_life -= 1
 	$player_hit.play()
-	$lifeLabel.text = "Life : "+str(GlobalVars.my_life)
+	$lifeLabel.text = ""+str(GlobalVars.my_life)
 	if GlobalVars.my_life == 0:
 		if GlobalVars.game_type == "endless_game":
 			if GlobalVars.my_score > GlobalVars.high_score :
@@ -83,7 +83,7 @@ func _life_lost():
 func _score_lost():
 	$error.play()
 	GlobalVars.my_score -= 1
-	$scoreLabel.text = "Score : "+str(GlobalVars.my_score)
+	$scoreLabel.text = ""+str(GlobalVars.my_score)
 	
 
 func _on_BackButton_pressed():

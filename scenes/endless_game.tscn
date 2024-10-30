@@ -69,7 +69,7 @@ autoplay = true
 stream = ExtResource( 10 )
 
 [node name="power_up_timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 2.0
 autostart = true
 
 [node name="new_enemy" type="Timer" parent="."]

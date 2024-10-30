@@ -109,10 +109,10 @@ texture_normal = SubResource( 17 )
 [node name="setting_label" type="Label" parent="settings"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 34.6641
-margin_top = 36.5798
-margin_right = -33.336
-margin_bottom = -37.4202
+margin_left = 34.2085
+margin_top = 36.0
+margin_right = -33.7915
+margin_bottom = -37.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2

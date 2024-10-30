@@ -27,6 +27,13 @@ window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
 
+[global]
+
+ren=false
+rende=false
+re=false
+tex=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

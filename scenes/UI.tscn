@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://audio/drop.wav" type="AudioStream" id=6]
 [ext_resource path="res://audio/hit.wav" type="AudioStream" id=7]
 [ext_resource path="res://audio/Powerup.wav" type="AudioStream" id=8]
+[ext_resource path="res://assests/power_up/life.png" type="Texture" id=9]
+[ext_resource path="res://assests/others/score.png" type="Texture" id=10]
+[ext_resource path="res://assests/others/high_score.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -40,6 +43,8 @@ format = 1
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
 rect_pivot_offset = Vector2( -928, 72 )
 script = ExtResource( 2 )
 
@@ -90,30 +95,41 @@ rect_scale = Vector2( 1.9033, 1.85075 )
 texture_normal = ExtResource( 4 )
 
 [node name="lifeLabel" type="Label" parent="."]
-margin_left = 262.0
+margin_left = 119.0
 margin_top = 21.0
-margin_right = 387.0
+margin_right = 148.0
 margin_bottom = 58.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
 custom_fonts/font = SubResource( 3 )
-text = "Life : 3"
+text = "3"
 align = 1
 valign = 1
 
+[node name="Sprite" type="Sprite" parent="lifeLabel"]
+position = Vector2( -19, 14 )
+scale = Vector2( 0.652344, 0.652344 )
+texture = ExtResource( 9 )
+
 [node name="scoreLabel" type="Label" parent="."]
-margin_left = 66.0
+margin_left = 217.0
 margin_top = 21.0
-margin_right = 230.0
+margin_right = 243.0
 margin_bottom = 56.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
 custom_fonts/font = SubResource( 2 )
-text = "Score : 0"
+text = "0"
 align = 1
 valign = 1
 
+[node name="Sprite" type="Sprite" parent="scoreLabel"]
+position = Vector2( -23, 15 )
+scale = Vector2( 0.677735, 0.677735 )
+texture = ExtResource( 10 )
+
 [node name="Levels" type="Label" parent="."]
+visible = false
 margin_left = 144.0
 margin_top = 64.0
 margin_right = 264.0
@@ -122,15 +138,21 @@ custom_fonts/font = SubResource( 4 )
 text = "Level : 1"
 
 [node name="high_score" type="Label" parent="."]
-visible = false
-margin_left = 98.0
-margin_top = 64.0
-margin_right = 312.0
-margin_bottom = 99.0
+margin_left = 328.0
+margin_top = 22.0
+margin_right = 354.0
+margin_bottom = 57.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
 custom_fonts/font = SubResource( 5 )
-text = "High Score : 0"
+text = "0"
 align = 1
 valign = 1
+
+[node name="Sprite" type="Sprite" parent="high_score"]
+position = Vector2( -31, 10.5 )
+scale = Vector2( 0.775, 0.6375 )
+texture = ExtResource( 11 )
 
 [node name="error" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
