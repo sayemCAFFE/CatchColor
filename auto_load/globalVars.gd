@@ -91,7 +91,7 @@ var level5 = {
 var endless_game1 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["Vspike","vise_varse"],
-	"power_up":["2xpower","life_power"]
+	"power_up":["2xpower"]
 	}
 
 var endless_game2 = {
