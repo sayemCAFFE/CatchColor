@@ -42,7 +42,8 @@ var enemy_types = {
 var power_up_types = {
 	"life_power": preload("res://scenes/life.tscn"),
 	"speed_power": preload("res://scenes/speed.tscn"),
-	"rainbow_bucket": preload("res://scenes/rainbow_bucket.tscn")
+	"rainbow_bucket": preload("res://scenes/rainbow_bucket.tscn"),
+	"2xpower": preload("res://scenes/2xpower.tscn")
 }
 
 var none
@@ -90,19 +91,19 @@ var level5 = {
 var endless_game1 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["Vspike","vise_varse"],
-	"power_up":["rainbow_bucket"]
+	"power_up":["2xpower","life_power"]
 	}
 
 var endless_game2 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["smile_enemy"],
-	"power_up":["life_power","speed_power"]
+	"power_up":["speed_power","rainbow_bucket","life_power"]
 	}
 
 var endless_game3 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["shooter"],
-	"power_up":["life_power","speed_power"]
+	"power_up":["rainbow_bucket","speed_power"]
 	}
 
 var levels = [none,level1,level2,level3,level4,level5]

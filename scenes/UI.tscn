@@ -171,8 +171,13 @@ stream = SubResource( 7 )
 stream = ExtResource( 8 )
 volume_db = -5.0
 
+[node name="doublescoretime" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="button_down" from="right" to="." method="_on_right_button_down"]
 [connection signal="button_up" from="right" to="." method="_on_right_button_up"]
 [connection signal="button_down" from="left" to="." method="_on_left_button_down"]
 [connection signal="button_up" from="left" to="." method="_on_left_button_up"]
+[connection signal="timeout" from="doublescoretime" to="." method="_on_doublescoretime_timeout"]

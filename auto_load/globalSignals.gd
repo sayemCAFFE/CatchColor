@@ -31,3 +31,5 @@ signal vise_verse_do()
 signal all_color_lost()
 
 signal rainbow_bucket_active()
+
+signal double_point()

@@ -1,11 +1,14 @@
 extends Control
 
+var add_score = 1
+
 func _ready():
 	GlobalSignals.connect("update_score", self, "_update_score")
 	GlobalSignals.connect("Sign_show", self, "_Sign_show")
 	GlobalSignals.connect("life_lost", self, "_life_lost")
 	GlobalSignals.connect("score_lost",self, "_score_lost")
 	GlobalSignals.connect("life_update", self, "_life_update")
+	GlobalSignals.connect("double_point", self, "_double_point")
 	$Levels.text = "Level : "+str(GlobalVars.current_level)
 	GlobalVars.my_score = 0
 	GlobalVars.my_life = 3
@@ -26,6 +29,10 @@ func sound_check():
 		$error.stream_paused = true
 		$collect.stream_paused = true
 		$player_hit.stream_paused = true
+
+func _double_point():
+	add_score = 2
+	$doublescoretime.start()
 
 func _life_update():
 	GlobalVars.my_life += 1
@@ -64,7 +71,7 @@ func _Sign_show(state):
 		$collect.play()
 
 func _update_score():
-	GlobalVars.my_score += 1
+	GlobalVars.my_score += add_score
 	$scoreLabel.text = ""+str(GlobalVars.my_score)
 
 
@@ -104,3 +111,5 @@ func _on_left_button_up():
 func _on_left_button_down():
 	GlobalSignals.emit_signal("move_left")
 
+func _on_doublescoretime_timeout():
+	add_score = 1
