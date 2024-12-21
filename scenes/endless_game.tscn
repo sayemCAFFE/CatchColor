@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assests/main_background/colorful/sky.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://audio/game_soundEndless.mp3" type="AudioStream" id=9]
 [ext_resource path="res://audio/pressed.wav" type="AudioStream" id=10]
+[ext_resource path="res://scenes/lives_letter_box.tscn" type="PackedScene" id=11]
 
 [node name="endless_game" type="Node2D"]
 script = ExtResource( 6 )
@@ -74,6 +75,9 @@ autostart = true
 
 [node name="new_enemy" type="Timer" parent="."]
 wait_time = 26.0
+
+[node name="lives_letter_box" parent="." instance=ExtResource( 11 )]
+position = Vector2( 327, 93 )
 
 [connection signal="timeout" from="collect_timer" to="." method="_on_collect_timer_timeout"]
 [connection signal="timeout" from="enemy_timer" to="." method="_on_enemy_timer_timeout"]

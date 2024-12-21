@@ -5,6 +5,9 @@ var endless_speed_range = Vector2(300,300)
 
 var game_device : String
 
+var LIVES_text : String
+var lives_letter_count = 0
+
 var game_type : String
 var one_time_chack = true
 
@@ -43,7 +46,8 @@ var power_up_types = {
 	"life_power": preload("res://scenes/life.tscn"),
 	"speed_power": preload("res://scenes/speed.tscn"),
 	"rainbow_bucket": preload("res://scenes/rainbow_bucket.tscn"),
-	"2xpower": preload("res://scenes/2xpower.tscn")
+	"2xpower": preload("res://scenes/2xpower.tscn"),
+	"LIVES_text": preload("res://scenes/lives_letter.tscn")
 }
 
 var none
@@ -91,13 +95,13 @@ var level5 = {
 var endless_game1 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["Vspike","vise_varse"],
-	"power_up":["2xpower"]
+	"power_up":["LIVES_text"]
 	}
 
 var endless_game2 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["smile_enemy"],
-	"power_up":["speed_power","rainbow_bucket","life_power"]
+	"power_up":["speed_power","2xpower","life_power"]
 	}
 
 var endless_game3 = {
