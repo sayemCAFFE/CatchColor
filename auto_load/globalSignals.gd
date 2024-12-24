@@ -8,12 +8,6 @@ signal red_color_Off()
 signal blue_color_Off()
 signal green_color_Off()
 
-signal L_letter_active()
-signal I_letter_active()
-signal V_letter_active()
-signal E_letter_active()
-signal S_letter_active()
-
 signal Sign_show(state)
 signal high_score_show()
 
@@ -39,3 +33,5 @@ signal all_color_lost()
 signal rainbow_bucket_active()
 
 signal double_point()
+
+signal lives_letter_collected(letter)

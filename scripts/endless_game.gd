@@ -7,6 +7,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	sound_check()
 	_reset_collect_timer()
+	GlobalVars.lives_letter_count = 0
 	$collect_speed_timer.start()
 	$new_enemy.start()
 

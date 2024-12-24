@@ -101,13 +101,13 @@ var endless_game1 = {
 var endless_game2 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["smile_enemy"],
-	"power_up":["speed_power","2xpower","life_power"]
+	"power_up":["LIVES_text","life_power"]
 	}
 
 var endless_game3 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["shooter"],
-	"power_up":["rainbow_bucket","speed_power"]
+	"power_up":["rainbow_bucket","LIVES_text"]
 	}
 
 var levels = [none,level1,level2,level3,level4,level5]

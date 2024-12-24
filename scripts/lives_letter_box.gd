@@ -1,27 +1,33 @@
 extends Node2D
 
 func _ready():
-	GlobalSignals.connect("L_letter_active", self, "_L_letter_active")
-	GlobalSignals.connect("I_letter_active", self, "_I_letter_active")
-	GlobalSignals.connect("V_letter_active",self, "_V_letter_active")
-	GlobalSignals.connect("E_letter_active" ,self, "_E_letter_active")
-	GlobalSignals.connect("S_letter_active", self, "_S_letter_active")
+	GlobalSignals.connect("lives_letter_collected", self, "_lives_letter_collected")
 
+func _lives_letter_collected(letter):
+	match letter:
+		"L":
+			$L_letter.text = "L"
+		"I":
+			$I_letter.text = "I"
+		"V":
+			$V_letter.text = "V"
+		"E":
+			$E_letter.text = "E"
+		"S":
+			$S_letter.text = "S"
+			print ("you got extra lives")
+			GlobalVars.lives_letter_count = 0
+			GlobalVars.my_life += 4
+			GlobalSignals.emit_signal("life_update")
+			_reser_letter_box()
 
-func _L_letter_active():
-	$L_letter.text = "L"
+func _reser_letter_box():
+	$L_letter.text = "X"
+	$I_letter.text = "X"
+	$V_letter.text = "X"
+	$E_letter.text = "X"
+	$S_letter.text = "X"
 
-func _I_letter_active():
-	$I_letter.text = "I"
-
-func _V_letter_active():
-	$V_letter.text = "V"
-
-func _E_letter_active():
-	$E_letter.text = "E"
-
-func _S_letter_active():
-	$S_letter.text = "S"
 
 
 
