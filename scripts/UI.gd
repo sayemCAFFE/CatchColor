@@ -9,6 +9,7 @@ func _ready():
 	GlobalSignals.connect("score_lost",self, "_score_lost")
 	GlobalSignals.connect("life_update", self, "_life_update")
 	GlobalSignals.connect("double_point", self, "_double_point")
+	GlobalSignals.connect("vise_verse_do", self, "_vise_verse_do")
 	$Levels.text = "Level : "+str(GlobalVars.current_level)
 	GlobalVars.my_score = 0
 	GlobalVars.my_life = 3
@@ -19,6 +20,11 @@ func _ready():
 	sound_check()
 	print(GlobalVars.speed_range)
 	var game_device = false
+
+func _vise_verse_do():
+	GlobalVars.left_to_right = true
+	GlobalVars.right_to_left = true
+	$vise_varse_time.start()
 
 func sound_check():
 	if GlobalVars.sound_on == true:
@@ -100,7 +106,10 @@ func _on_BackButton_pressed():
 	get_tree().change_scene("res://scenes/main_menu.tscn")
 
 func _on_right_button_down():
-	GlobalSignals.emit_signal("move_right")
+	if GlobalVars.right_to_left == true:
+		GlobalSignals.emit_signal("move_left")
+	if GlobalVars.right_to_left == false:
+		GlobalSignals.emit_signal("move_right")
 
 func _on_right_button_up():
 	GlobalSignals.emit_signal("right_stop")
@@ -109,7 +118,15 @@ func _on_left_button_up():
 	GlobalSignals.emit_signal("left_stop")
 
 func _on_left_button_down():
-	GlobalSignals.emit_signal("move_left")
+	if GlobalVars.left_to_right == true:
+		GlobalSignals.emit_signal("move_right")
+	if GlobalVars.left_to_right == false:
+		GlobalSignals.emit_signal("move_left")
 
 func _on_doublescoretime_timeout():
 	add_score = 1
+
+
+func _on_vise_varse_time_timeout():
+	GlobalVars.left_to_right = false
+	GlobalVars.right_to_left = false

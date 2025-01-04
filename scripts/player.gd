@@ -9,9 +9,6 @@ var jump_speed = -500
 var mobile_move_right = false
 var mobile_move_left = false
 
-var left_to_right = false
-var right_to_left = false
-
 func _ready():
 	GlobalSignals.connect("move_right", self, "_move_right")
 	GlobalSignals.connect("right_stop", self, "_right_stop")
@@ -30,8 +27,8 @@ func _rainbow_bucket_active():
 
 func _vise_verse_do():
 	$vise_varse_time.start()
-	left_to_right = true
-	right_to_left = true
+	GlobalVars.left_to_right = true
+	GlobalVars.right_to_left = true
 
 func _move_right():
 	mobile_move_right = true
@@ -55,14 +52,14 @@ func _process(delta):
 	var direction = Vector2.ZERO
 	
 	if Input.is_action_pressed("left"):
-		if left_to_right == false:
+		if GlobalVars.left_to_right == false:
 			direction.x = -1
-		if left_to_right == true:
+		if GlobalVars.left_to_right == true:
 			direction.x = 1
 	if Input.is_action_pressed("right"):
-		if right_to_left == false:
+		if GlobalVars.right_to_left == false:
 			direction.x = 1
-		if right_to_left == true:
+		if GlobalVars.right_to_left == true:
 			direction.x = -1
 			
 	if mobile_move_right == true:
@@ -105,8 +102,8 @@ func _process(delta):
 
 func _on_vise_varse_time_timeout():
 	$vise_varse_time.stop()
-	left_to_right = false
-	right_to_left = false
+	GlobalVars.left_to_right = false
+	GlobalVars.right_to_left = false
 
 func _on_rainbow_power_timer_timeout():
 	GlobalVars.rainbow_bucket_allow = false
