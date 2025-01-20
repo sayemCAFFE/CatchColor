@@ -34,7 +34,7 @@ func sound_check():
 func _update_score():
 	if GlobalVars.game_type == "level_game":
 		$"%backgroundcolor".scale.y += 0.05
-		if $"%backgroundcolor".scale.y >= 0.10:
+		if $"%backgroundcolor".scale.y >= 0.95:
 			if GlobalVars.current_level == 14:
 				GlobalVars.current_level = 1
 				get_tree().change_scene("res://scenes/main_menu.tscn")
