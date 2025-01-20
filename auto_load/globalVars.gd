@@ -25,7 +25,7 @@ var my_score = 0
 var high_score = 0
 var my_life = 3
 
-var current_level:int = 14
+var current_level:int = 1
 var endless_current:int = 0
 
 var left_to_right = false
