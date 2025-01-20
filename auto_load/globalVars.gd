@@ -25,7 +25,7 @@ var my_score = 0
 var high_score = 0
 var my_life = 3
 
-var current_level:int = 1
+var current_level:int = 14
 var endless_current:int = 0
 
 var left_to_right = false
@@ -81,7 +81,7 @@ var level3 = {
 
 var level4 = {
 	"color":["Green","Red"],
-	"enemy":["shooter"],
+	"enemy":["Vspike"],
 	"power_up":["life_power"],
 	"background_colour": "res://assests/main_background/colorful/tree_colour.png",
 	"background_bw": "res://assests/main_background/black_white/tree_bw.png"
@@ -89,10 +89,82 @@ var level4 = {
 
 var level5 = {
 	"color":["Red","Green","Blue"],
-	"enemy":["Vspike","shooter"],
+	"enemy":["vise_varse"],
 	"power_up":["life_power","speed_power"],
 	"background_colour": "res://assests/main_background/colorful/tree.png",
 	"background_bw": "res://assests/main_background/black_white/tree-modified.png"
+	}
+
+var level6 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["all_color_lost","vise_varse"],
+	"power_up":["life_power","rainbow_bucket"],
+	"background_colour": "res://assests/main_background/colorful/blue_duck.png",
+	"background_bw": "res://assests/main_background/black_white/blue_duck-modified.png"
+	}
+
+var level7 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["smile_enemy","vise_varse"],
+	"power_up":["speed_power","rainbow_bucket"],
+	"background_colour": "res://assests/main_background/colorful/camera_man.png",
+	"background_bw": "res://assests/main_background/black_white/camera_man-modified.png"
+	}
+
+var level8 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["vise_varse"],
+	"power_up":["2xpower","life_power"],
+	"background_colour": "res://assests/main_background/colorful/flower.png",
+	"background_bw": "res://assests/main_background/black_white/flower-modified.png"
+	}
+
+var level9 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["Vspike","smile_enemy"],
+	"power_up":["2xpower","speed_power"],
+	"background_colour": "res://assests/main_background/colorful/house.png",
+	"background_bw": "res://assests/main_background/black_white/house-modified.png"
+	}
+
+var level10 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["Vspike"],
+	"power_up":["2xpower","life_power"],
+	"background_colour": "res://assests/main_background/colorful/parrot.png",
+	"background_bw": "res://assests/main_background/black_white/parrot-modified.png"
+	}
+
+var level11 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["Vspike","vise_varse"],
+	"power_up":["rainbow_bucket","life_power"],
+	"background_colour": "res://assests/main_background/colorful/santa.png",
+	"background_bw": "res://assests/main_background/black_white/santa-modified.png"
+	}
+
+var level12 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["smile_enemy","shooter"],
+	"power_up":["rainbow_bucket","life_power"],
+	"background_colour": "res://assests/main_background/colorful/tree_colour.png",
+	"background_bw": "res://assests/main_background/black_white/tree_bw.png"
+	}
+
+var level13 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["shooter"],
+	"power_up":["2xpower","speed_power"],
+	"background_colour": "res://assests/main_background/colorful/soilder_boy.png",
+	"background_bw": "res://assests/main_background/black_white/soilder_boy-modified.png"
+	}
+
+var level14 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["shooter"],
+	"power_up":["2xpower","life_power"],
+	"background_colour": "res://assests/main_background/colorful/tiger.png",
+	"background_bw": "res://assests/main_background/black_white/tiger-modified.png"
 	}
 
 var endless_game1 = {
@@ -113,6 +185,6 @@ var endless_game3 = {
 	"power_up":["rainbow_bucket","LIVES_text"]
 	}
 
-var levels = [none,level1,level2,level3,level4,level5]
+var levels = [none,level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14]
 
 var endless_levels = [endless_game1,endless_game2,endless_game3]

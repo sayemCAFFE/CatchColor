@@ -112,10 +112,16 @@ func _on_right_button_down():
 		GlobalSignals.emit_signal("move_right")
 
 func _on_right_button_up():
-	GlobalSignals.emit_signal("right_stop")
+	if GlobalVars.right_to_left == true:
+		GlobalSignals.emit_signal("left_stop")
+	if GlobalVars.right_to_left == false:
+		GlobalSignals.emit_signal("right_stop")
 
 func _on_left_button_up():
-	GlobalSignals.emit_signal("left_stop")
+	if GlobalVars.left_to_right == true:
+		GlobalSignals.emit_signal("right_stop")
+	if GlobalVars.left_to_right == false:
+		GlobalSignals.emit_signal("left_stop")
 
 func _on_left_button_down():
 	if GlobalVars.left_to_right == true:

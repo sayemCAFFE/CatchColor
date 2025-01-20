@@ -34,16 +34,20 @@ func sound_check():
 func _update_score():
 	if GlobalVars.game_type == "level_game":
 		$"%backgroundcolor".scale.y += 0.05
-		if $"%backgroundcolor".scale.y >= 0.95:
-			$win_scene.visible = true
-			GlobalSignals.emit_signal("win_sound")
-			$game.queue_free()
-			if GlobalVars.speed_range < Vector2(620,620):
-				GlobalVars.speed_range += Vector2(20,20)
-				print(GlobalVars.speed_range)
+		if $"%backgroundcolor".scale.y >= 0.10:
+			if GlobalVars.current_level == 14:
+				GlobalVars.current_level = 1
+				get_tree().change_scene("res://scenes/main_menu.tscn")
 			else:
-				GlobalVars.speed_range = Vector2(620,620)
-				print(GlobalVars.speed_range)
+				$win_scene.visible = true
+				GlobalSignals.emit_signal("win_sound")
+				$game.queue_free()
+				if GlobalVars.speed_range < Vector2(620,620):
+					GlobalVars.speed_range += Vector2(20,20)
+					print(GlobalVars.speed_range)
+				else:
+					GlobalVars.speed_range = Vector2(620,620)
+					print(GlobalVars.speed_range)
 
 
 func _score_lost():
