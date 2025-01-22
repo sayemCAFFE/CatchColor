@@ -7,6 +7,9 @@ func _ready():
 
 
 func _on_menuButton_pressed():
+	GlobalVars.left_to_right = false
+	GlobalVars.right_to_left = false
+	
 	$pressed.play()
 	get_tree().change_scene("res://scenes/main_menu.tscn")
 

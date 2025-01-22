@@ -10,6 +10,10 @@ func _win_sound():
 
 func _on_nextLevel_pressed():
 	$pressed.play()
+	
+	GlobalVars.left_to_right = false
+	GlobalVars.right_to_left = false
+	
 	GlobalVars.current_level += 1
 	if GlobalVars.current_level > GlobalVars.levels.size()-1:
 		print("game complete")
@@ -21,4 +25,8 @@ func _on_nextLevel_pressed():
 
 func _on_main_menu_pressed():
 	$pressed.play()
+	
+	GlobalVars.left_to_right = false
+	GlobalVars.right_to_left = false
+	
 	get_tree().change_scene("res://scenes/main_menu.tscn")
