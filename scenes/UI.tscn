@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/ui.gd" type="Script" id=2]
 [ext_resource path="res://assests/others/back_button.png" type="Texture" id=3]
-[ext_resource path="res://assests/buttons/left_side.png" type="Texture" id=4]
 [ext_resource path="res://audio/error.wav" type="AudioStream" id=5]
 [ext_resource path="res://audio/drop.wav" type="AudioStream" id=6]
 [ext_resource path="res://audio/hit.wav" type="AudioStream" id=7]
@@ -15,10 +14,6 @@
 [sub_resource type="DynamicFont" id=1]
 size = 36
 font_data = ExtResource( 1 )
-
-[sub_resource type="StreamTexture" id=6]
-flags = 4
-load_path = "res://.import/right_side.png-e3611d98e43e86f32be82c8d55ba96ca.stex"
 
 [sub_resource type="DynamicFont" id=3]
 size = 30
@@ -43,8 +38,6 @@ format = 1
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -1.0
-margin_bottom = -1.0
 rect_pivot_offset = Vector2( -928, 72 )
 script = ExtResource( 2 )
 
@@ -72,27 +65,24 @@ texture_normal = ExtResource( 3 )
 
 [node name="right" type="TextureButton" parent="."]
 unique_name_in_owner = true
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 325.0
-margin_top = 502.0
-margin_right = -45.0
-margin_bottom = -188.0
+margin_left = 201.0
+margin_top = 100.0
+margin_right = -96.0
+margin_bottom = -345.0
+rect_min_size = Vector2( 100, 275 )
 rect_scale = Vector2( 1.9033, 1.85075 )
-texture_normal = SubResource( 6 )
 
 [node name="left" type="TextureButton" parent="."]
 unique_name_in_owner = true
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 9.0
-margin_top = 500.0
-margin_right = -361.0
-margin_bottom = -190.0
+margin_top = 100.0
+margin_right = -299.0
+margin_bottom = -345.0
+rect_min_size = Vector2( 100, 275 )
 rect_scale = Vector2( 1.9033, 1.85075 )
-texture_normal = ExtResource( 4 )
 
 [node name="lifeLabel" type="Label" parent="."]
 margin_left = 119.0

@@ -46,12 +46,14 @@ func _life_update():
 	$lifeLabel.text = ""+str(GlobalVars.my_life) 
 
 func game_device():
-	if GlobalVars.game_device == "computer_game":
-		$"%right".visible = false
-		$"%left".visible = false
-	if GlobalVars.game_device == "mobile_game":
-		$"%right".visible = true
-		$"%left".visible = true
+	$"%right".visible = true
+	$"%left".visible = true
+#	if GlobalVars.game_device == "computer_game":
+#		$"%right".visible = false
+#		$"%left".visible = false
+#	if GlobalVars.game_device == "mobile_game":
+#		$"%right".visible = true
+#		$"%left".visible = true
 
 
 func game_type():
