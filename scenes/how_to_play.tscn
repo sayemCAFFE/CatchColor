@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/how_to_play.gd" type="Script" id=2]
@@ -6,8 +6,7 @@
 [ext_resource path="res://assests/others/number.png" type="Texture" id=4]
 [ext_resource path="res://assests/others/back_button.png" type="Texture" id=5]
 [ext_resource path="res://assests/buttons/next_page.png" type="Texture" id=6]
-[ext_resource path="res://assests/buttons/right_side.png" type="Texture" id=7]
-[ext_resource path="res://assests/buttons/left_side.png" type="Texture" id=8]
+[ext_resource path="res://assests/buttons/two_side_sign.png" type="Texture" id=7]
 [ext_resource path="res://assests/buttons/press.png" type="Texture" id=9]
 [ext_resource path="res://audio/normal_sound.mp3" type="AudioStream" id=10]
 [ext_resource path="res://audio/pressed.wav" type="AudioStream" id=11]
@@ -56,7 +55,7 @@ font_data = ExtResource( 1 )
 bg_color = Color( 0.0509804, 0.109804, 0.431373, 1 )
 
 [sub_resource type="DynamicFont" id=17]
-size = 22
+size = 25
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=18]
@@ -194,27 +193,22 @@ position = Vector2( 37, 551 )
 scale = Vector2( 1.22581, 1.26534 )
 texture = ExtResource( 9 )
 
-[node name="right" type="Sprite" parent="mobiles"]
-position = Vector2( 84, 472 )
-scale = Vector2( 1.4, 1.4 )
+[node name="two_side_sign" type="Sprite" parent="mobiles"]
+position = Vector2( 41.875, 456.25 )
+scale = Vector2( 0.334524, 0.334524 )
 texture = ExtResource( 7 )
 
-[node name="left" type="Sprite" parent="mobiles"]
-position = Vector2( 27, 472 )
-scale = Vector2( 1.4, 1.4 )
-texture = ExtResource( 8 )
-
 [node name="right_left_label" type="Label" parent="mobiles"]
-margin_left = 111.0
+margin_left = 85.0
 margin_top = 452.0
-margin_right = 403.0
+margin_right = 396.0
 margin_bottom = 492.0
 custom_colors/font_color = Color( 0.0941176, 0, 0.541176, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_fonts/font = SubResource( 17 )
 custom_styles/normal = SubResource( 18 )
-text = "Right,Left button to move"
+text = "Right,Left side to move"
 align = 1
 valign = 1
 
