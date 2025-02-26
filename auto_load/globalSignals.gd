@@ -38,3 +38,5 @@ signal rainbow_bucket_active()
 signal double_point()
 
 signal lives_letter_collected(letter)
+
+signal coin_show()

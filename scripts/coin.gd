@@ -10,5 +10,6 @@ func _on_coin_area_body_entered(body):
 		GlobalSignals.emit_signal("coin_update")
 		GlobalVars.save_data()
 		queue_free()
+		GlobalSignals.emit_signal("coin_show")
 	if body.is_in_group("floor"):
 		queue_free()

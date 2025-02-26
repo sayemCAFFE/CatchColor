@@ -10,6 +10,7 @@ func _ready():
 	GlobalSignals.connect("life_update", self, "_life_update")
 	GlobalSignals.connect("double_point", self, "_double_point")
 	GlobalSignals.connect("vise_verse_do", self, "_vise_verse_do")
+	GlobalSignals.connect("coin_show", self, "_coin_show")
 	$Levels.text = "Level : "+str(GlobalVars.current_level)
 	GlobalVars.my_score = 0
 	GlobalVars.my_life = 3
@@ -26,6 +27,11 @@ func _vise_verse_do():
 	GlobalVars.left_to_right = true
 	GlobalVars.right_to_left = true
 	$vise_varse_time.start()
+
+func _coin_show():
+	$"%coin_show".text = "$"+str(GlobalVars.data["coins"])
+	$"%fade_in".interpolate_property($"%coin_panel", "modulate:a", 0.0, 1.0, 1.0)
+	$"%fade_in".start()
 
 func sound_check():
 	if GlobalVars.sound_on == true:
@@ -142,7 +148,10 @@ func _on_left_button_down():
 func _on_doublescoretime_timeout():
 	add_score = 1
 
-
 func _on_vise_varse_time_timeout():
 	GlobalVars.left_to_right = false
 	GlobalVars.right_to_left = false
+
+func _on_fade_in_tween_completed(object, key):
+	var fade_out = create_tween()
+	fade_out.tween_property($"%coin_panel", "modulate:a", 0.0, 4.0)
