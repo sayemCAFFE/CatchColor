@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export (Array, Texture) var sprites
+
 var direction := Vector2.ZERO
 export var speed = 350
 
@@ -17,6 +19,7 @@ func _ready():
 	GlobalSignals.connect("speed_power", self, "_speed_power")
 	GlobalSignals.connect("vise_verse_do",self, "_vise_verse_do")
 	GlobalSignals.connect("rainbow_bucket_active", self, "_rainbow_bucket_active")
+	update_player_sprite()
 
 func _rainbow_bucket_active():
 	$rainbow_power_timer.start()
@@ -24,6 +27,14 @@ func _rainbow_bucket_active():
 	$player.visible = false
 	$"%CollisionShape".set_deferred("disabled", false)
 	
+
+func update_player_sprite():
+	$player.texture = GlobalVars.bucket_textures[GlobalVars.data["selected_player_index"]]
+#	texture = sprites[GlobalVars.data["selected_player_index"]]
+
+#func update_player_sprite():
+#	texture = sprites[GlobalVars.data["selected_player_index"]]
+#
 
 func _vise_verse_do():
 	$vise_varse_time.start()

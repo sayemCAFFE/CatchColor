@@ -14,7 +14,8 @@ func _ready():
 	GlobalVars.my_score = 0
 	GlobalVars.my_life = 3
 	GlobalSignals.connect("high_score_show", self, "_high_score_show")
-	$high_score.text = ""+str(GlobalVars.high_score)
+#	$high_score.text = ""+str(GlobalVars.high_score)
+	$high_score.text = ""+str(GlobalVars.data["high_score"])
 	game_type()
 	game_device()
 	sound_check()
@@ -89,11 +90,18 @@ func _life_lost():
 	$lifeLabel.text = ""+str(GlobalVars.my_life)
 	if GlobalVars.my_life == 0:
 		if GlobalVars.game_type == "endless_game":
-			if GlobalVars.my_score > GlobalVars.high_score :
-				GlobalVars.high_score = GlobalVars.my_score
+			if GlobalVars.my_score > GlobalVars.data["high_score"] :
+				
+				GlobalVars.data["high_score"] = GlobalVars.my_score
+				GlobalVars.save_data()
+				
 		GlobalVars.speed_range = Vector2(300,300)
 		GlobalVars.endless_speed_range = Vector2(300,300)
 		get_tree().change_scene("res://scenes/game_over.tscn")
+
+#		GlobalVars.data["high_score"] += 1000
+#		GlobalSignals.emit_signal("coin_update")
+#		GlobalVars.save_data()
 
 func _score_lost():
 	$error.play()

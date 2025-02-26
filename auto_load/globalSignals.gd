@@ -1,5 +1,8 @@
 extends Node
 
+signal update_player_sprite(texture)
+signal coin_update()
+
 signal red_color()
 signal blue_color()
 signal green_color()

@@ -1,5 +1,7 @@
 extends Node
 
+var path : String = "user://save.txt"
+
 var speed_range = Vector2(300,300)
 var endless_speed_range = Vector2(300,300)
 
@@ -24,6 +26,7 @@ var rainbow_bucket_allow = false
 var my_score = 0
 var high_score = 0
 var my_life = 3
+var coins : int
 
 var current_level:int = 1
 var endless_current:int = 0
@@ -31,10 +34,24 @@ var endless_current:int = 0
 var left_to_right = false
 var right_to_left = false
 
+var bucket_textures = [
+	preload("res://assests/others/buckets/gray_bucket.png"),
+	preload("res://assests/others/buckets/bubble_bucket.png"),
+	preload("res://assests/others/buckets/circle_bucket.png"),
+	preload("res://assests/others/buckets/glass_bucket.png"),
+	preload("res://assests/others/buckets/gold_bucket.png"),
+	preload("res://assests/others/buckets/nightstar_bucket.png"),
+	preload("res://assests/others/buckets/colorfiled_bucket.png")
+]
+
 var collect_types = {
 	"Red": preload("res://scenes/red.tscn"),
 	"Blue": preload("res://scenes/blue.tscn"),
 	"Green": preload("res://scenes/green.tscn")
+}
+
+var coin_type = {
+	"normal_coin" : preload("res://scenes/coin.tscn")
 }
 
 var enemy_types = {
@@ -50,8 +67,46 @@ var power_up_types = {
 	"speed_power": preload("res://scenes/speed.tscn"),
 	"rainbow_bucket": preload("res://scenes/rainbow_bucket.tscn"),
 	"2xpower": preload("res://scenes/2xpower.tscn"),
-	"LIVES_text": preload("res://scenes/lives_letter.tscn")
+	"LIVES_text": preload("res://scenes/lives_letter.tscn"),
+	"test_coin" : preload("res://scenes/coin.tscn")
 }
+
+var data : Dictionary = {
+	"items" : {
+		"gray" : true,
+		"bubble" : false,
+		"circle" : false,
+		"glass" : false,
+		"star" : false,
+		"night_star" : false,
+		"rainbow" : false
+	},
+	"selected_player_index" : 0,
+	"coins" : 0,
+	"high_score" : 0
+}
+
+func save_data():
+	var file := File.new()
+	file.open(path, File.WRITE)
+	
+	var game_data : Dictionary = {
+		"data" : data
+	}
+	file.store_var(game_data)
+	file.close()
+
+func load_data():
+	var file := File.new()
+	file.open(path, File.READ)
+	if !file.file_exists(path):
+		return
+	var game_data = file.get_var()
+	data = game_data["data"]
+	file.close()
+
+func get_coins_as_text():
+	return "$" + str(data["coins"])
 
 var none
 
@@ -170,19 +225,22 @@ var level14 = {
 var endless_game1 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["Vspike","vise_varse"],
-	"power_up":["LIVES_text"]
+	"power_up":["LIVES_text"],
+	"coin":["normal_coin"],
 	}
 
 var endless_game2 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["smile_enemy"],
-	"power_up":["LIVES_text","life_power"]
+	"power_up":["LIVES_text","life_power"],
+	"coin":["normal_coin"]
 	}
 
 var endless_game3 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["shooter"],
-	"power_up":["rainbow_bucket","LIVES_text"]
+	"power_up":["rainbow_bucket","LIVES_text"],
+	"coin":["normal_coin"]
 	}
 
 var levels = [none,level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14]

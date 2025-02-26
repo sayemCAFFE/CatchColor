@@ -22,11 +22,11 @@ func _on_level_button_pressed():
 	$pressed.play()
 	GlobalVars.game_type = "level_game"
 	get_tree().change_scene("res://scenes/game_scene.tscn")
-
+	
 func _on_endless_button_pressed():
 	$pressed.play()
 	GlobalVars.game_type = "endless_game"
-	get_tree().change_scene("res://scenes/endless_game.tscn")	
+	get_tree().change_scene("res://scenes/endless_game.tscn")
 
 func _on_how_to_play_pressed():
 	$pressed.play()
@@ -35,3 +35,8 @@ func _on_how_to_play_pressed():
 func _on_settings_pressed():
 	$pressed.play()
 	get_tree().change_scene("res://scenes/settings.tscn")
+
+func _on_Button_pressed():
+	$shop_wondow.visible = true
+
+

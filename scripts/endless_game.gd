@@ -48,6 +48,14 @@ func _get_collect():
 	var to_drop = collect_items[rng]
 	_drop_color(GlobalVars.collect_types[to_drop])
 
+func _get_coins():
+	var level = GlobalVars.endless_levels[GlobalVars.endless_current]
+	var coin_items = level["coin"]
+	var coin_count = coin_items.size()
+	var rng = randi() % coin_count
+	var to_drop = coin_items[rng]
+	_drop_item(GlobalVars.coin_type[to_drop])
+
 func _get_enemy():
 	var level = GlobalVars.endless_levels[GlobalVars.endless_current]
 	var enemy_items = level["enemy"]
@@ -95,3 +103,5 @@ func _on_new_enemy_timeout():
 		GlobalVars.endless_current = 0
 		
 
+func _on_coin_timer_timeout():
+	_get_coins()
