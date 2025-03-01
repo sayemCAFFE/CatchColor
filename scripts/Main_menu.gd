@@ -36,7 +36,6 @@ func _on_settings_pressed():
 	$pressed.play()
 	get_tree().change_scene("res://scenes/settings.tscn")
 
-func _on_Button_pressed():
+
+func _on_shop_button_pressed():
 	$shop_wondow.visible = true
-
-

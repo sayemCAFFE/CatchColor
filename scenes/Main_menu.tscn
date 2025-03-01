@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
 [ext_resource path="res://assests/main_background/colorful/sky_background.png" type="Texture" id=3]
+[ext_resource path="res://assests/buttons/color_button.png" type="Texture" id=4]
 [ext_resource path="res://audio/normal_sound.mp3" type="AudioStream" id=5]
 [ext_resource path="res://audio/pressed.wav" type="AudioStream" id=6]
 [ext_resource path="res://font/Comfortaa/static/Comfortaa-Bold.ttf" type="DynamicFontData" id=7]
@@ -47,8 +48,8 @@ load_path = "res://.import/color_button.png-80496f24b8eed868e0c0fb114e2ac5b1.ste
 size = 21
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=19]
-size = 40
+[sub_resource type="DynamicFont" id=22]
+size = 37
 font_data = ExtResource( 7 )
 
 [node name="main_menu" type="Node2D"]
@@ -84,9 +85,9 @@ valign = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 112.0
-margin_top = 164.0
+margin_top = 151.0
 margin_right = 310.0
-margin_bottom = 284.0
+margin_bottom = 271.0
 rect_scale = Vector2( 0.951993, 0.847461 )
 texture_normal = SubResource( 21 )
 
@@ -109,9 +110,9 @@ valign = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 80.0
-margin_top = 527.0
+margin_top = 511.0
 margin_right = 278.0
-margin_bottom = 647.0
+margin_bottom = 631.0
 rect_scale = Vector2( 1.26347, 1.01972 )
 texture_normal = SubResource( 17 )
 
@@ -134,9 +135,9 @@ valign = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 76.0
-margin_top = 280.0
+margin_top = 268.0
 margin_right = 274.0
-margin_bottom = 400.0
+margin_bottom = 388.0
 rect_scale = Vector2( 1.30526, 0.839348 )
 texture_normal = SubResource( 20 )
 
@@ -157,9 +158,9 @@ valign = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 22.0
-margin_top = 399.0
+margin_top = 383.0
 margin_right = 220.0
-margin_bottom = 519.0
+margin_bottom = 503.0
 rect_scale = Vector2( 1.85707, 0.953776 )
 texture_normal = SubResource( 15 )
 
@@ -186,14 +187,26 @@ autoplay = true
 [node name="pressed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
-[node name="Button" type="Button" parent="."]
-margin_left = 5.0
-margin_top = 668.0
-margin_right = 121.0
-margin_bottom = 720.0
-custom_fonts/font = SubResource( 19 )
-text = "shop"
-icon_align = 1
+[node name="shop_button" type="TextureButton" parent="."]
+margin_left = 0.999999
+margin_top = 634.0
+margin_right = 199.0
+margin_bottom = 754.0
+rect_scale = Vector2( 0.707, 0.707 )
+texture_normal = ExtResource( 4 )
+
+[node name="shop_label" type="Label" parent="shop_button"]
+margin_left = 48.0905
+margin_top = 39.6039
+margin_right = 149.091
+margin_bottom = 81.6039
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_fonts/font = SubResource( 22 )
+text = "Shop"
+align = 1
+valign = 1
 
 [node name="shop_wondow" parent="." instance=ExtResource( 8 )]
 
@@ -201,4 +214,4 @@ icon_align = 1
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="endless_button" to="." method="_on_endless_button_pressed"]
 [connection signal="pressed" from="how_to_play" to="." method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="shop_button" to="." method="_on_shop_button_pressed"]

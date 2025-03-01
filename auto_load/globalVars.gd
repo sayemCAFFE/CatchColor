@@ -36,12 +36,17 @@ var right_to_left = false
 
 var bucket_textures = [
 	preload("res://assests/others/buckets/gray_bucket.png"),
-	preload("res://assests/others/buckets/bubble_bucket.png"),
-	preload("res://assests/others/buckets/circle_bucket.png"),
 	preload("res://assests/others/buckets/glass_bucket.png"),
+	preload("res://assests/others/buckets/bubble_bucket.png"),
+	preload("res://assests/others/buckets/tigras_bucket.png"),
 	preload("res://assests/others/buckets/gold_bucket.png"),
 	preload("res://assests/others/buckets/nightstar_bucket.png"),
-	preload("res://assests/others/buckets/colorfiled_bucket.png")
+	preload("res://assests/others/buckets/colorfiled_bucket.png"),
+	preload("res://assests/others/buckets/circle_bucket.png"),
+	preload("res://assests/others/buckets/itra_bucket.png"),
+	preload("res://assests/others/buckets/smaha.png"),
+	preload("res://assests/others/buckets/snake_bucket.png"),
+	preload("res://assests/others/buckets/crown.png")
 ]
 
 var collect_types = {
@@ -74,12 +79,17 @@ var power_up_types = {
 var data : Dictionary = {
 	"items" : {
 		"gray" : true,
-		"bubble" : false,
-		"circle" : false,
 		"glass" : false,
+		"monste" : false,
+		"tigres" : false,
 		"star" : false,
 		"night_star" : false,
-		"rainbow" : false
+		"rainbow" : false,
+		"circle" : false,
+		"ilra" : false,
+		"smaha" : false,
+		"snake" : false,
+		"crown" : false
 	},
 	"selected_player_index" : 0,
 	"coins" : 0,

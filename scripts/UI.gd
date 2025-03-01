@@ -154,4 +154,4 @@ func _on_vise_varse_time_timeout():
 
 func _on_fade_in_tween_completed(object, key):
 	var fade_out = create_tween()
-	fade_out.tween_property($"%coin_panel", "modulate:a", 0.0, 4.0)
+	fade_out.tween_property($"%coin_panel", "modulate:a", 0.0, 1.0)

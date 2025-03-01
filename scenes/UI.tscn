@@ -179,7 +179,7 @@ unique_name_in_owner = true
 
 [node name="coin_panel" type="Panel" parent="."]
 unique_name_in_owner = true
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 0, 0.878431, 0.164706, 0 )
 margin_left = 127.0
 margin_top = 307.0
 margin_right = 274.0

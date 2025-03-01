@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/danger_Spike.png-d6b4d9b85e417abd355fc27c559f1f4e.stex"
+path="res://.import/danger_spike.png-afc7055573921069598b7ebaeb5cdcae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/enemies/danger_Spike.png"
-dest_files=[ "res://.import/danger_Spike.png-d6b4d9b85e417abd355fc27c559f1f4e.stex" ]
+source_file="res://assests/enemies/danger_spike.png"
+dest_files=[ "res://.import/danger_spike.png-afc7055573921069598b7ebaeb5cdcae.stex" ]
 
 [params]
 

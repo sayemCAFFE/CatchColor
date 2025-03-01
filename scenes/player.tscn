@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assests/others/buckets/gray_bucket.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assests/others/buckets/circle_bucket.png" type="Texture" id=7]
 [ext_resource path="res://assests/others/buckets/glass_bucket.png" type="Texture" id=8]
 [ext_resource path="res://assests/others/buckets/bubble_bucket.png" type="Texture" id=9]
+[ext_resource path="res://assests/others/buckets/smaha.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 33.5 )
@@ -22,7 +23,9 @@ script = ExtResource( 2 )
 sprites = [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 5 ) ]
 
 [node name="player" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
 scale = Vector2( 1.4, 1.4862 )
+texture = ExtResource( 10 )
 
 [node name="playerCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 7.5 )

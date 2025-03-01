@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite-0001.png-d411bc220ff6e1fd5d2cc12dc85545b6.stex"
+path="res://.import/crown.png-85072ad82e04dfdf21cee2591ff1865b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/others/buckets/Sprite-0001.png"
-dest_files=[ "res://.import/Sprite-0001.png-d411bc220ff6e1fd5d2cc12dc85545b6.stex" ]
+source_file="res://assests/others/buckets/crown.png"
+dest_files=[ "res://.import/crown.png-85072ad82e04dfdf21cee2591ff1865b.stex" ]
 
 [params]
 

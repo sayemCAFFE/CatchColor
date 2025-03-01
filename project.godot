@@ -33,6 +33,7 @@ ren=false
 rende=false
 re=false
 tex=false
+touch=false
 
 [gui]
 
@@ -70,6 +71,10 @@ four={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":52,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
