@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/itra_bucket.png-4bf5fed9267c503a39b5a71a60bddd83.stex"
+path="res://.import/lion.png-f6dc1b725632074aadce7465eb066680.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/others/buckets/itra_bucket.png"
-dest_files=[ "res://.import/itra_bucket.png-4bf5fed9267c503a39b5a71a60bddd83.stex" ]
+source_file="res://assests/others/buckets/lion.png"
+dest_files=[ "res://.import/lion.png-f6dc1b725632074aadce7465eb066680.stex" ]
 
 [params]
 

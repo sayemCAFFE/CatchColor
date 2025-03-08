@@ -5,7 +5,7 @@ var speed_range = Vector2(200,250)
 
 func _on_coin_area_body_entered(body):
 	if body.is_in_group("player"):
-		GlobalVars.data["coins"] += 10000
+		GlobalVars.data["coins"] += 10
 #		GlobalVars.coins += 100
 		GlobalSignals.emit_signal("coin_update")
 		GlobalVars.save_data()

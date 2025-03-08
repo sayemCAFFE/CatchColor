@@ -1,16 +1,17 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
-[ext_resource path="res://assests/main_background/colorful/sky_background.png" type="Texture" id=3]
+[ext_resource path="res://assests/test_menu/background_try.png" type="Texture" id=3]
 [ext_resource path="res://assests/buttons/color_button.png" type="Texture" id=4]
 [ext_resource path="res://audio/normal_sound.mp3" type="AudioStream" id=5]
 [ext_resource path="res://audio/pressed.wav" type="AudioStream" id=6]
 [ext_resource path="res://font/Comfortaa/static/Comfortaa-Bold.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/shop_window.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assests/buttons/color_button_hover.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=4]
-size = 60
+size = 54
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -21,7 +22,7 @@ flags = 4
 load_path = "res://.import/color_button.png-80496f24b8eed868e0c0fb114e2ac5b1.stex"
 
 [sub_resource type="DynamicFont" id=12]
-size = 35
+size = 31
 font_data = ExtResource( 1 )
 
 [sub_resource type="StreamTexture" id=17]
@@ -29,7 +30,7 @@ flags = 4
 load_path = "res://.import/color_button.png-80496f24b8eed868e0c0fb114e2ac5b1.stex"
 
 [sub_resource type="DynamicFont" id=18]
-size = 35
+size = 28
 font_data = ExtResource( 1 )
 
 [sub_resource type="StreamTexture" id=20]
@@ -37,7 +38,7 @@ flags = 4
 load_path = "res://.import/color_button.png-80496f24b8eed868e0c0fb114e2ac5b1.stex"
 
 [sub_resource type="DynamicFont" id=14]
-size = 30
+size = 28
 font_data = ExtResource( 1 )
 
 [sub_resource type="StreamTexture" id=15]
@@ -45,7 +46,7 @@ flags = 4
 load_path = "res://.import/color_button.png-80496f24b8eed868e0c0fb114e2ac5b1.stex"
 
 [sub_resource type="DynamicFont" id=16]
-size = 21
+size = 18
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=22]
@@ -56,10 +57,9 @@ font_data = ExtResource( 7 )
 script = ExtResource( 2 )
 
 [node name="color_rect" type="ColorRect" parent="."]
-visible = false
-margin_right = 512.0
+margin_right = 405.0
 margin_bottom = 716.0
-color = Color( 0, 0.368627, 1, 1 )
+color = Color( 0, 0.0627451, 0.172549, 1 )
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 203, 361 )
@@ -68,9 +68,9 @@ texture = ExtResource( 3 )
 [node name="label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.0
+margin_left = 25.0
 margin_top = 58.0
-margin_right = 405.0
+margin_right = 378.0
 margin_bottom = 126.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -90,14 +90,16 @@ margin_right = 310.0
 margin_bottom = 271.0
 rect_scale = Vector2( 0.951993, 0.847461 )
 texture_normal = SubResource( 21 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 
 [node name="levels_label" type="Label" parent="level_button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 34.6641
-margin_top = 36.5798
-margin_right = -33.336
-margin_bottom = -37.4202
+margin_left = 44.118
+margin_top = 40.1199
+margin_right = -41.882
+margin_bottom = -39.8801
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -115,14 +117,16 @@ margin_right = 278.0
 margin_bottom = 631.0
 rect_scale = Vector2( 1.26347, 1.01972 )
 texture_normal = SubResource( 17 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 
 [node name="setting_label" type="Label" parent="settings"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 34.2085
-margin_top = 36.0
-margin_right = -33.7915
-margin_bottom = -37.0
+margin_left = 34.7915
+margin_top = 39.9226
+margin_right = -33.2085
+margin_bottom = -40.0774
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -140,12 +144,15 @@ margin_right = 274.0
 margin_bottom = 388.0
 rect_scale = Vector2( 1.30526, 0.839348 )
 texture_normal = SubResource( 20 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 
 [node name="endless_label" type="Label" parent="endless_button"]
-margin_left = 34.6641
-margin_top = 33.0398
-margin_right = 164.664
-margin_bottom = 86.0398
+margin_left = 39.7661
+margin_top = 43.1914
+margin_right = 159.766
+margin_bottom = 78.1914
+rect_scale = Vector2( 0.973, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -163,14 +170,17 @@ margin_right = 220.0
 margin_bottom = 503.0
 rect_scale = Vector2( 1.85707, 0.953776 )
 texture_normal = SubResource( 15 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 
 [node name="label" type="Label" parent="how_to_play"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 33.7307
-margin_top = 31.7079
-margin_right = -32.269
-margin_bottom = -35.2921
+margin_left = 35.4615
+margin_top = 38.6123
+margin_right = -35.5385
+margin_bottom = -53.3877
+rect_scale = Vector2( 1, 1.597 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
@@ -188,12 +198,14 @@ autoplay = true
 stream = ExtResource( 6 )
 
 [node name="shop_button" type="TextureButton" parent="."]
-margin_left = 0.999999
+margin_left = 17.0
 margin_top = 634.0
-margin_right = 199.0
+margin_right = 215.0
 margin_bottom = 754.0
 rect_scale = Vector2( 0.707, 0.707 )
 texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 
 [node name="shop_label" type="Label" parent="shop_button"]
 margin_left = 48.0905

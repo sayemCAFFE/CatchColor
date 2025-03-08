@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/how_to_play.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assests/others/back_button.png" type="Texture" id=5]
 [ext_resource path="res://assests/buttons/next_page.png" type="Texture" id=6]
 [ext_resource path="res://assests/buttons/two_side_sign.png" type="Texture" id=7]
+[ext_resource path="res://assests/test_menu/Sprite-0004.png" type="Texture" id=8]
 [ext_resource path="res://assests/buttons/press.png" type="Texture" id=9]
 [ext_resource path="res://audio/normal_sound.mp3" type="AudioStream" id=10]
 [ext_resource path="res://audio/pressed.wav" type="AudioStream" id=11]
@@ -71,10 +72,10 @@ bg_color = Color( 0, 0.517647, 0.0470588, 1 )
 [node name="HowToPlay" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 408.0
-margin_bottom = 720.0
-color = Color( 0.521569, 1, 0, 1 )
+[node name="ColorRect" type="Sprite" parent="."]
+position = Vector2( 201.75, 342.5 )
+scale = Vector2( 0.993827, 1.04861 )
+texture = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="."]
 margin_top = 24.0

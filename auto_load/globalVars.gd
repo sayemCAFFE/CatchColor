@@ -41,11 +41,15 @@ var bucket_textures = [
 	preload("res://assests/others/buckets/tigras_bucket.png"),
 	preload("res://assests/others/buckets/gold_bucket.png"),
 	preload("res://assests/others/buckets/nightstar_bucket.png"),
-	preload("res://assests/others/buckets/colorfiled_bucket.png"),
+	preload("res://assests/others/buckets/spiksta.png"),
 	preload("res://assests/others/buckets/circle_bucket.png"),
 	preload("res://assests/others/buckets/itra_bucket.png"),
 	preload("res://assests/others/buckets/smaha.png"),
 	preload("res://assests/others/buckets/snake_bucket.png"),
+	preload("res://assests/others/buckets/lion.png"),
+	preload("res://assests/others/buckets/ninja_power.png"),
+	preload("res://assests/others/buckets/colorfiled_bucket.png"),
+	preload("res://assests/others/buckets/cosho.png"),
 	preload("res://assests/others/buckets/crown.png")
 ]
 
@@ -84,11 +88,15 @@ var data : Dictionary = {
 		"tigres" : false,
 		"star" : false,
 		"night_star" : false,
-		"rainbow" : false,
+		"spiksta" : false,
 		"circle" : false,
 		"ilra" : false,
 		"smaha" : false,
 		"snake" : false,
+		"lion" : false,
+		"ninja" : false,
+		"rainbow" : false,
+		"cosho" : false,
 		"crown" : false
 	},
 	"selected_player_index" : 0,

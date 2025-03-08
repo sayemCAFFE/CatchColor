@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/itra_bucket.png-4bf5fed9267c503a39b5a71a60bddd83.stex"
+path="res://.import/color_button_hover.png-bb8ee557292ddb482d57b0b33f9099e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/others/buckets/itra_bucket.png"
-dest_files=[ "res://.import/itra_bucket.png-4bf5fed9267c503a39b5a71a60bddd83.stex" ]
+source_file="res://assests/buttons/color_button_hover.png"
+dest_files=[ "res://.import/color_button_hover.png-bb8ee557292ddb482d57b0b33f9099e4.stex" ]
 
 [params]
 

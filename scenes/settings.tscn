@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/useing_device.gd" type="Script" id=2]
 [ext_resource path="res://audio/normal_sound.mp3" type="AudioStream" id=3]
 [ext_resource path="res://audio/pressed.wav" type="AudioStream" id=4]
+[ext_resource path="res://assests/main_background/colorful/sky_background.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
@@ -68,16 +69,23 @@ load_path = "res://.import/back_button.png-fc667308579cc9d3a1d4b66657bae9bd.stex
 [node name="settings" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 202.25, 360 )
+scale = Vector2( 1.00123, 1 )
+texture = ExtResource( 5 )
+
 [node name="color_rect" type="ColorRect" parent="."]
-margin_right = 408.0
-margin_bottom = 720.0
+margin_left = -15.0
+margin_top = 89.0
+margin_right = 417.0
+margin_bottom = 500.0
 color = Color( 0.14902, 0.145098, 0.168627, 1 )
 
 [node name="question" type="Label" parent="."]
 margin_left = -35.0
-margin_top = 75.0
+margin_top = 95.0
 margin_right = 445.0
-margin_bottom = 122.0
+margin_bottom = 142.0
 custom_fonts/font = SubResource( 1 )
 text = "Game Controls...."
 align = 1
@@ -85,9 +93,9 @@ valign = 1
 
 [node name="sound_on_off" type="Label" parent="."]
 margin_left = -35.0
-margin_top = 291.0
+margin_top = 311.0
 margin_right = 445.0
-margin_bottom = 338.0
+margin_bottom = 358.0
 custom_fonts/font = SubResource( 8 )
 text = "Sound"
 align = 1
@@ -97,9 +105,9 @@ valign = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
-margin_top = 188.0
+margin_top = 208.0
 margin_right = 216.0
-margin_bottom = 240.0
+margin_bottom = 260.0
 custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 6 )
 custom_styles/normal = SubResource( 5 )
@@ -109,9 +117,9 @@ text = "keyboard"
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 233.0
-margin_top = 188.0
+margin_top = 208.0
 margin_right = 400.0
-margin_bottom = 240.0
+margin_bottom = 260.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/normal = SubResource( 4 )
@@ -122,9 +130,9 @@ icon_align = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
-margin_top = 384.0
+margin_top = 404.0
 margin_right = 173.0
-margin_bottom = 432.0
+margin_bottom = 452.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 9 )
 custom_styles/hover = SubResource( 11 )
@@ -142,9 +150,9 @@ texture = SubResource( 16 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 223.0
-margin_top = 384.0
+margin_top = 404.0
 margin_right = 384.0
-margin_bottom = 432.0
+margin_bottom = 452.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 13 )
 custom_styles/hover = SubResource( 14 )
@@ -161,9 +169,9 @@ texture = SubResource( 17 )
 
 [node name="back_button" type="TextureButton" parent="."]
 margin_left = 2.0
-margin_top = 2.0
+margin_top = 8.0
 margin_right = 66.0
-margin_bottom = 66.0
+margin_bottom = 72.0
 texture_normal = SubResource( 12 )
 
 [node name="normal_sound" type="AudioStreamPlayer" parent="."]
