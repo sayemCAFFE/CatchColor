@@ -5,6 +5,7 @@ func _ready():
 	
 
 func _win_sound():
+	
 	$normal_sound.stream_paused = false
 	$normal_sound.play()
 

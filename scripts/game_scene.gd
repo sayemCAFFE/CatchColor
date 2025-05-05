@@ -7,6 +7,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	$win_scene.visible = false
 	sound_check()
+	
 	GlobalSignals.connect("update_score", self, "_update_score")
 	GlobalSignals.connect("score_lost", self, "_score_lost")
 	GlobalSignals.connect("all_color_lost",self, "_all_color_lost")
@@ -27,9 +28,11 @@ func sound_check():
 	if GlobalVars.sound_on == true:
 		$"%game_sound".stream_paused = false
 		$"%pressed".stream_paused = false
+		
 	if GlobalVars.sound_on == false:
-		$"%pressed".stream_paused = true
+		
 		$"%game_sound".stream_paused = true
+		$"%pressed".stream_paused = true
 
 func _update_score():
 	if GlobalVars.game_type == "level_game":
@@ -93,7 +96,7 @@ func _get_enemy():
 	_drop_item(GlobalVars.enemy_types[to_drop])
 
 func _get_power_up():
-	var level = GlobalVars.endless_levels[GlobalVars.endless_current]
+	var level = GlobalVars.levels[GlobalVars.current_level]
 	var power_up_items = level["power_up"]
 	var power_up_count = power_up_items.size()
 	var rng = randi() % power_up_count

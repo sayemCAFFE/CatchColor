@@ -43,3 +43,10 @@ func _on_off_pressed():
 	GlobalVars.sound_on = false
 	sound_check()
 	sound_buttons_state()
+
+func _on_Button_pressed():
+	print ("reset here")
+	GlobalVars.last_selected_menu = GlobalVars.data["menu"]
+	GlobalVars.data["menu"] = -1
+	GlobalVars.save_data()
+	get_tree().change_scene("res://scenes/main_menu.tscn")

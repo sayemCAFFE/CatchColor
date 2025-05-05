@@ -1,0 +1,56 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assests/others/buckets/gray_bucket.png" type="Texture" id=1]
+[ext_resource path="res://scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://assests/power_up/rainbow_bucket.png" type="Texture" id=3]
+[ext_resource path="res://assests/others/buckets/colorfiled_bucket.png" type="Texture" id=4]
+[ext_resource path="res://assests/others/buckets/nightstar_bucket.png" type="Texture" id=5]
+[ext_resource path="res://assests/others/buckets/gold_bucket.png" type="Texture" id=6]
+[ext_resource path="res://assests/others/buckets/circle_bucket.png" type="Texture" id=7]
+[ext_resource path="res://assests/others/buckets/glass_bucket.png" type="Texture" id=8]
+[ext_resource path="res://assests/others/buckets/bubble_bucket.png" type="Texture" id=9]
+[ext_resource path="res://assests/others/buckets/smaha.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 33.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 37.5, 37 )
+
+[node name="player" type="KinematicBody2D" groups=["player"]]
+collision_mask = 30
+script = ExtResource( 2 )
+sprites = [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 5 ) ]
+
+[node name="player" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+scale = Vector2( 1.4, 1.4862 )
+texture = ExtResource( 10 )
+
+[node name="playerCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 7.5 )
+shape = SubResource( 1 )
+
+[node name="vise_varse_time" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="rainbow_player" type="Sprite" parent="."]
+visible = false
+position = Vector2( -0.499998, -3.57628e-07 )
+scale = Vector2( 1.39063, 1.5 )
+texture = ExtResource( 3 )
+
+[node name="rainbow_power" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="rainbow_power"]
+unique_name_in_owner = true
+position = Vector2( 1.5, 5 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="rainbow_power_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="vise_varse_time" to="." method="_on_vise_varse_time_timeout"]
+[connection signal="timeout" from="rainbow_power_timer" to="." method="_on_rainbow_power_timer_timeout"]

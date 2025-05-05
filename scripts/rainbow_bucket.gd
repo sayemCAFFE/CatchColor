@@ -18,3 +18,4 @@ func _on_rainbow_bucket_area_body_entered(body):
 		queue_free()
 	if body.is_in_group("floor"):
 		queue_free()
+	

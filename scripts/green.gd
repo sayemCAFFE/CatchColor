@@ -25,7 +25,7 @@ func _on_greenArea_body_entered(body):
 		else:
 			GlobalSignals.emit_signal("score_lost")
 			queue_free()
-			print("miss")
+			print("you lost a score")
 
 func _on_Timer_timeout():
 	queue_free()

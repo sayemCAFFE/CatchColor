@@ -101,8 +101,11 @@ var data : Dictionary = {
 	},
 	"selected_player_index" : 0,
 	"coins" : 0,
-	"high_score" : 0
+	"high_score" : 0,
+	"menu" : -1
 }
+
+var last_selected_menu = -1
 
 func save_data():
 	var file := File.new()
@@ -118,6 +121,7 @@ func load_data():
 	var file := File.new()
 	file.open(path, File.READ)
 	if !file.file_exists(path):
+		print ("no save file")
 		return
 	var game_data = file.get_var()
 	data = game_data["data"]
@@ -130,7 +134,7 @@ var none
 
 var level1 = {
 	"color":["Red"],
-	"enemy":["Vspike","all_color_lost"],
+	"enemy":["Vspike"],
 	"power_up":["speed_power"],
 	"background_colour": "res://assests/main_background/colorful/background.png",
 	"background_bw": "res://assests/main_background/black_white/background-modified.png"
@@ -138,7 +142,7 @@ var level1 = {
 
 var level2 = {
 	"color":["Green","Blue"],
-	"enemy":["smile_enemy"],
+	"enemy":["smile_enemy","all_color_lost"],
 	"power_up":["speed_power"],
 	"background_colour": "res://assests/main_background/colorful/blue_home.png",
 	"background_bw": "res://assests/main_background/black_white/blue_home-modified.png"
@@ -240,6 +244,14 @@ var level14 = {
 	"background_bw": "res://assests/main_background/black_white/tiger-modified.png"
 	}
 
+var level15 = {
+	"color":["Red","Green","Blue"],
+	"enemy":["shooter"],
+	"power_up":["2xpower","speed_power"],
+	"background_colour": "res://assests/main_background/colorful/ultapalta.png",
+	"background_bw": "res://assests/main_background/black_white/ultapalta-modified.png"
+}
+
 var endless_game1 = {
 	"color":["Red","Green","Blue"],
 	"enemy":["Vspike","vise_varse"],
@@ -261,6 +273,6 @@ var endless_game3 = {
 	"coin":["normal_coin"]
 	}
 
-var levels = [none,level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14]
+var levels = [none,level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15]
 
 var endless_levels = [endless_game1,endless_game2,endless_game3]

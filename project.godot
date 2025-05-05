@@ -12,12 +12,13 @@ config_version=4
 
 config/name="catch_color"
 run/main_scene="res://scenes/main_menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://assests/play_store_cover.png"
 
 [autoload]
 
 GlobalSignals="*res://auto_load/globalSignals.gd"
 GlobalVars="*res://auto_load/globalVars.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 

@@ -19,6 +19,8 @@ func _ready():
 	GlobalSignals.connect("speed_power", self, "_speed_power")
 	GlobalSignals.connect("vise_verse_do",self, "_vise_verse_do")
 	GlobalSignals.connect("rainbow_bucket_active", self, "_rainbow_bucket_active")
+	GlobalVars.left_to_right = false
+	GlobalVars.right_to_left = false
 	update_player_sprite()
 
 func _rainbow_bucket_active():
@@ -115,6 +117,7 @@ func _on_vise_varse_time_timeout():
 	$vise_varse_time.stop()
 	GlobalVars.left_to_right = false
 	GlobalVars.right_to_left = false
+	
 
 func _on_rainbow_power_timer_timeout():
 	GlobalVars.rainbow_bucket_allow = false

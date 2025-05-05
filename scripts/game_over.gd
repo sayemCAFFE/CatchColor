@@ -10,6 +10,8 @@ func _on_menuButton_pressed():
 	GlobalVars.left_to_right = false
 	GlobalVars.right_to_left = false
 	
+#	get_tree().change_scene()
+	
 	$pressed.play()
 	get_tree().change_scene("res://scenes/main_menu.tscn")
 
@@ -20,3 +22,13 @@ func sound_check():
 	if GlobalVars.sound_on == false:
 		$normal_sound.stream_paused = true
 		$pressed.stream_paused = true
+	
+
+func _on_Button_pressed():
+	var player_name = $"%LineEdit".text.strip_edges()
+	if player_name != "":
+		SilentWolf.Scores.persist_score(player_name, GlobalVars.my_score)
+		
+		
+		
+		
