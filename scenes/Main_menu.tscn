@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://font/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://assests/backgro/baqckgro1.JPG" type="Texture" id=16]
 [ext_resource path="res://assests/backgro/backgro4.JPG" type="Texture" id=17]
 [ext_resource path="res://assests/others/bsc_icon.png" type="Texture" id=18]
+[ext_resource path="res://assests/others/hand.png" type="Texture" id=19]
 
 [sub_resource type="DynamicFont" id=4]
 size = 54
@@ -52,6 +53,10 @@ font_data = ExtResource( 1 )
 size = 30
 font_data = ExtResource( 7 )
 
+[sub_resource type="DynamicFont" id=27]
+size = 30
+font_data = ExtResource( 7 )
+
 [sub_resource type="DynamicFont" id=25]
 size = 18
 font_data = ExtResource( 7 )
@@ -64,7 +69,6 @@ font_data = ExtResource( 7 )
 script = ExtResource( 2 )
 
 [node name="color_rect" type="ColorRect" parent="."]
-visible = false
 margin_right = 405.0
 margin_bottom = 716.0
 color = Color( 0, 0.0627451, 0.172549, 1 )
@@ -98,6 +102,7 @@ autoplay = true
 visible = false
 
 [node name="background1" type="Node2D" parent="."]
+visible = false
 
 [node name="background" type="Sprite" parent="background1"]
 position = Vector2( 203, 360 )
@@ -108,11 +113,11 @@ texture = ExtResource( 3 )
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 106.0
-margin_top = 177.0
-margin_right = 304.0
-margin_bottom = 297.0
-rect_scale = Vector2( 0.968, 0.828 )
+margin_left = 109.0
+margin_top = 172.0
+margin_right = 307.0
+margin_bottom = 292.0
+rect_scale = Vector2( 0.879, 0.751 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -135,10 +140,10 @@ valign = 1
 [node name="settings" type="TextureButton" parent="background1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 633.0
-margin_right = 206.0
-margin_bottom = 753.0
+margin_left = 3.0
+margin_top = 639.0
+margin_right = 201.0
+margin_bottom = 759.0
 rect_scale = Vector2( 0.798, 0.649 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
@@ -191,11 +196,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 56.0
-margin_top = 290.0
-margin_right = 254.0
-margin_bottom = 410.0
-rect_scale = Vector2( 1.461, 0.839 )
+margin_left = 64.0
+margin_top = 269.0
+margin_right = 262.0
+margin_bottom = 389.0
+rect_scale = Vector2( 1.355, 0.776 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -217,11 +222,11 @@ valign = 1
 [node name="how_to_play" type="TextureButton" parent="background1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 57.0
-margin_top = 518.0
-margin_right = 255.0
-margin_bottom = 638.0
-rect_scale = Vector2( 1.432, 0.848 )
+margin_left = 80.0
+margin_top = 467.0
+margin_right = 278.0
+margin_bottom = 587.0
+rect_scale = Vector2( 1.228, 0.725 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -243,11 +248,11 @@ align = 1
 valign = 1
 
 [node name="shop_button" type="TextureButton" parent="background1"]
-margin_left = 81.0
-margin_top = 402.0
-margin_right = 279.0
-margin_bottom = 522.0
-rect_scale = Vector2( 1.192, 0.849 )
+margin_left = 92.0
+margin_top = 368.0
+margin_right = 290.0
+margin_bottom = 488.0
+rect_scale = Vector2( 1.07, 0.761 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -273,12 +278,30 @@ margin_bottom = 164.0
 rect_scale = Vector2( 1.044, 0.972 )
 texture = ExtResource( 10 )
 
-[node name="Button" type="Button" parent="background1"]
-margin_left = 296.0
-margin_top = 255.0
-margin_right = 394.0
-margin_bottom = 299.0
+[node name="Button" type="TextureButton" parent="background1"]
+margin_left = 98.0
+margin_top = 555.0
+margin_right = 296.0
+margin_bottom = 675.0
+rect_scale = Vector2( 1.044, 0.65 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="background1/Button"]
+margin_left = 40.8304
+margin_top = 44.4809
+margin_right = 266.83
+margin_bottom = 79.4809
+rect_scale = Vector2( 0.51, 0.876 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 0
+custom_fonts/font = SubResource( 27 )
 text = "Leaderboards"
+align = 1
+valign = 1
 
 [node name="background2" type="Node2D" parent="."]
 visible = false
@@ -295,25 +318,25 @@ anchor_bottom = 0.5
 margin_left = 55.0
 margin_top = 252.0
 margin_right = 359.0
-margin_bottom = 348.0
+margin_bottom = 326.0
 rect_scale = Vector2( 0.968, 0.828 )
 
 [node name="settings" type="TextureButton" parent="background2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 126.0
-margin_top = 675.0
-margin_right = 309.0
-margin_bottom = 732.0
+margin_left = 38.0
+margin_top = 674.0
+margin_right = 180.0
+margin_bottom = 720.0
 rect_scale = Vector2( 0.798, 0.649 )
 
 [node name="cradits" type="TextureButton" parent="background2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 297.0
-margin_top = 683.0
-margin_right = 432.0
-margin_bottom = 739.0
+margin_left = 268.0
+margin_top = 671.0
+margin_right = 455.0
+margin_bottom = 748.0
 rect_scale = Vector2( 0.563, 0.446 )
 
 [node name="endless_button" type="TextureButton" parent="background2"]
@@ -322,26 +345,33 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 49.0
-margin_top = 359.0
+margin_top = 349.0
 margin_right = 258.0
-margin_bottom = 451.0
+margin_bottom = 421.0
 rect_scale = Vector2( 1.461, 0.839 )
 
 [node name="how_to_play" type="TextureButton" parent="background2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 46.0
-margin_top = 463.0
+margin_top = 446.0
 margin_right = 261.0
-margin_bottom = 556.0
+margin_bottom = 516.0
 rect_scale = Vector2( 1.432, 0.848 )
 
 [node name="shop_button" type="TextureButton" parent="background2"]
 margin_left = 47.0
-margin_top = 572.0
+margin_top = 537.0
 margin_right = 303.0
-margin_bottom = 659.0
+margin_bottom = 611.0
 rect_scale = Vector2( 1.192, 0.849 )
+
+[node name="Button" type="TextureButton" parent="background2"]
+margin_left = 105.0
+margin_top = 620.0
+margin_right = 291.0
+margin_bottom = 680.0
+rect_scale = Vector2( 1.044, 0.65 )
 
 [node name="background3" type="Node2D" parent="."]
 visible = false
@@ -351,15 +381,23 @@ position = Vector2( 203, 360 )
 scale = Vector2( 1.00247, 1 )
 texture = ExtResource( 14 )
 
+[node name="TextureRect" type="TextureRect" parent="background3"]
+margin_left = 17.0
+margin_top = 20.0
+margin_right = 369.0
+margin_bottom = 164.0
+rect_scale = Vector2( 1.044, 0.972 )
+texture = ExtResource( 10 )
+
 [node name="level_button" type="TextureButton" parent="background3"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 106.0
-margin_top = 177.0
-margin_right = 304.0
-margin_bottom = 297.0
-rect_scale = Vector2( 0.968, 0.828 )
+margin_left = 109.0
+margin_top = 172.0
+margin_right = 307.0
+margin_bottom = 292.0
+rect_scale = Vector2( 0.879, 0.751 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -382,10 +420,10 @@ valign = 1
 [node name="settings" type="TextureButton" parent="background3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 633.0
-margin_right = 206.0
-margin_bottom = 753.0
+margin_left = 3.0
+margin_top = 639.0
+margin_right = 201.0
+margin_bottom = 759.0
 rect_scale = Vector2( 0.798, 0.649 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
@@ -438,11 +476,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 56.0
-margin_top = 290.0
-margin_right = 254.0
-margin_bottom = 410.0
-rect_scale = Vector2( 1.461, 0.839 )
+margin_left = 64.0
+margin_top = 269.0
+margin_right = 262.0
+margin_bottom = 389.0
+rect_scale = Vector2( 1.355, 0.776 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -464,11 +502,11 @@ valign = 1
 [node name="how_to_play" type="TextureButton" parent="background3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 57.0
-margin_top = 518.0
-margin_right = 255.0
-margin_bottom = 638.0
-rect_scale = Vector2( 1.432, 0.848 )
+margin_left = 80.0
+margin_top = 467.0
+margin_right = 278.0
+margin_bottom = 587.0
+rect_scale = Vector2( 1.228, 0.725 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -490,11 +528,11 @@ align = 1
 valign = 1
 
 [node name="shop_button" type="TextureButton" parent="background3"]
-margin_left = 81.0
-margin_top = 402.0
-margin_right = 279.0
-margin_bottom = 522.0
-rect_scale = Vector2( 1.192, 0.849 )
+margin_left = 92.0
+margin_top = 368.0
+margin_right = 290.0
+margin_bottom = 488.0
+rect_scale = Vector2( 1.07, 0.761 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -512,7 +550,39 @@ text = "Shop"
 align = 1
 valign = 1
 
-[node name="TextureRect" type="TextureRect" parent="background3"]
+[node name="Button" type="TextureButton" parent="background3"]
+margin_left = 98.0
+margin_top = 555.0
+margin_right = 296.0
+margin_bottom = 675.0
+rect_scale = Vector2( 1.044, 0.65 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="background3/Button"]
+margin_left = 40.8304
+margin_top = 44.4809
+margin_right = 266.83
+margin_bottom = 79.4809
+rect_scale = Vector2( 0.51, 0.876 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 0
+custom_fonts/font = SubResource( 27 )
+text = "Leaderboards"
+align = 1
+valign = 1
+
+[node name="background4" type="Node2D" parent="."]
+
+[node name="background" type="Sprite" parent="background4"]
+position = Vector2( 203, 360 )
+scale = Vector2( 1.00247, 1 )
+texture = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="background4"]
 margin_left = 17.0
 margin_top = 20.0
 margin_right = 369.0
@@ -520,32 +590,24 @@ margin_bottom = 164.0
 rect_scale = Vector2( 1.044, 0.972 )
 texture = ExtResource( 10 )
 
-[node name="background4" type="Node2D" parent="."]
-visible = false
-
-[node name="background" type="Sprite" parent="background4"]
-position = Vector2( 203, 360 )
-scale = Vector2( 1.00247, 1 )
-texture = ExtResource( 3 )
-
 [node name="level_button" type="TextureButton" parent="background4"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 74.0
-margin_top = 175.0
-margin_right = 277.0
-margin_bottom = 264.0
-rect_scale = Vector2( 1.292, 1.106 )
+margin_left = 100.0
+margin_top = 172.0
+margin_right = 303.0
+margin_bottom = 261.0
+rect_scale = Vector2( 0.901, 0.786 )
 texture_normal = ExtResource( 12 )
 
 [node name="levels_label" type="Label" parent="background4/level_button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 60.9504
-margin_top = 27.7778
-margin_right = -25.0496
-margin_bottom = -25.2222
+margin_left = 61.4334
+margin_top = 27.9627
+margin_right = -24.5666
+margin_bottom = -25.0373
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -557,20 +619,20 @@ valign = 1
 [node name="settings" type="TextureButton" parent="background4"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 637.0
-margin_right = 209.0
-margin_bottom = 726.0
-rect_scale = Vector2( 0.851, 0.694 )
+margin_left = -1.0
+margin_top = 653.0
+margin_right = 202.0
+margin_bottom = 742.0
+rect_scale = Vector2( 0.798, 0.649 )
 texture_normal = ExtResource( 12 )
 
 [node name="setting_label" type="Label" parent="background4/settings"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 57.3502
-margin_top = 31.0
-margin_right = -18.6498
-margin_bottom = -27.0
+margin_left = 52.6316
+margin_top = 30.8166
+margin_right = -18.3684
+margin_bottom = -27.1834
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -582,20 +644,20 @@ valign = 1
 [node name="cradits" type="TextureButton" parent="background4"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 289.0
-margin_top = 661.0
-margin_right = 487.0
-margin_bottom = 781.0
-rect_scale = Vector2( 0.563, 0.446 )
+margin_left = 259.0
+margin_top = 662.0
+margin_right = 462.0
+margin_bottom = 751.0
+rect_scale = Vector2( 0.658, 0.521 )
 texture_normal = ExtResource( 12 )
 
 [node name="setting_label" type="Label" parent="background4/cradits"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 60.3908
-margin_top = 29.1478
+margin_top = 31.39
 margin_right = -17.6092
-margin_bottom = -50.8522
+margin_bottom = -26.61
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -609,19 +671,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 51.0
-margin_top = 288.0
-margin_right = 254.0
-margin_bottom = 377.0
-rect_scale = Vector2( 1.461, 1.055 )
+margin_left = 53.0
+margin_top = 264.0
+margin_right = 256.0
+margin_bottom = 353.0
+rect_scale = Vector2( 1.378, 0.906 )
 texture_normal = ExtResource( 12 )
 
 [node name="endless_label" type="Label" parent="background4/endless_button"]
-margin_left = 64.3395
-margin_top = 30.9893
-margin_right = 184.339
-margin_bottom = 65.9893
-rect_scale = Vector2( 0.973, 1 )
+margin_left = 66.4207
+margin_top = 30.9278
+margin_right = 186.421
+margin_bottom = 65.9278
+rect_scale = Vector2( 0.9, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -633,20 +695,20 @@ valign = 1
 [node name="how_to_play" type="TextureButton" parent="background4"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 57.0
-margin_top = 512.0
-margin_right = 260.0
-margin_bottom = 601.0
-rect_scale = Vector2( 1.432, 0.987 )
+margin_left = 65.0
+margin_top = 448.0
+margin_right = 268.0
+margin_bottom = 537.0
+rect_scale = Vector2( 1.269, 0.877 )
 texture_normal = ExtResource( 12 )
 
 [node name="label" type="Label" parent="background4/how_to_play"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 55.8659
-margin_top = 30.1621
-margin_right = -15.1341
-margin_bottom = -37.8379
+margin_left = 56.1889
+margin_top = 30.3448
+margin_right = -14.8111
+margin_bottom = -37.6552
 rect_scale = Vector2( 1, 1.597 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
@@ -657,18 +719,18 @@ align = 1
 valign = 1
 
 [node name="shop_button" type="TextureButton" parent="background4"]
-margin_left = 81.0
-margin_top = 402.0
-margin_right = 284.0
-margin_bottom = 491.0
-rect_scale = Vector2( 1.192, 0.965 )
+margin_left = 84.0
+margin_top = 361.0
+margin_right = 287.0
+margin_bottom = 450.0
+rect_scale = Vector2( 1.07, 0.839 )
 texture_normal = ExtResource( 12 )
 
 [node name="shop_label" type="Label" parent="background4/shop_button"]
-margin_left = 67.953
-margin_top = 27.0907
-margin_right = 168.954
-margin_bottom = 69.0907
+margin_left = 68.2243
+margin_top = 26.2813
+margin_right = 169.225
+margin_bottom = 68.2813
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
@@ -677,13 +739,29 @@ text = "Shop"
 align = 1
 valign = 1
 
-[node name="TextureRect" type="TextureRect" parent="background4"]
-margin_left = 17.0
-margin_top = 20.0
-margin_right = 369.0
-margin_bottom = 164.0
-rect_scale = Vector2( 1.044, 0.972 )
-texture = ExtResource( 10 )
+[node name="Button" type="TextureButton" parent="background4"]
+margin_left = 82.0
+margin_top = 550.0
+margin_right = 285.0
+margin_bottom = 639.0
+rect_scale = Vector2( 1.119, 0.698 )
+texture_normal = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="background4/Button"]
+margin_left = 63.2184
+margin_top = 32.3077
+margin_right = 289.218
+margin_bottom = 67.3077
+rect_scale = Vector2( 0.51, 0.876 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 0
+custom_fonts/font = SubResource( 27 )
+text = "Leaderboards"
+align = 1
+valign = 1
 
 [node name="sellect_background" type="Control" parent="."]
 visible = false
@@ -732,6 +810,15 @@ custom_fonts/font = SubResource( 26 )
 text = "Done"
 align = 1
 valign = 1
+
+[node name="Sprite" type="Sprite" parent="sellect_background/ok"]
+position = Vector2( 235, 54 )
+texture = ExtResource( 19 )
+
+[node name="Sprite2" type="Sprite" parent="sellect_background/ok"]
+position = Vector2( -28, 54 )
+texture = ExtResource( 19 )
+flip_h = true
 
 [node name="high_light1" type="ColorRect" parent="sellect_background"]
 unique_name_in_owner = true
@@ -819,18 +906,21 @@ texture = ExtResource( 18 )
 [connection signal="pressed" from="background2/endless_button" to="." method="_on_endless_button_pressed"]
 [connection signal="pressed" from="background2/how_to_play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="background2/shop_button" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="background2/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="background3/level_button" to="." method="_on_level_button_pressed"]
 [connection signal="pressed" from="background3/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="background3/cradits" to="." method="_on_cradits_pressed"]
 [connection signal="pressed" from="background3/endless_button" to="." method="_on_endless_button_pressed"]
 [connection signal="pressed" from="background3/how_to_play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="background3/shop_button" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="background3/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="background4/level_button" to="." method="_on_level_button_pressed"]
 [connection signal="pressed" from="background4/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="background4/cradits" to="." method="_on_cradits_pressed"]
 [connection signal="pressed" from="background4/endless_button" to="." method="_on_endless_button_pressed"]
 [connection signal="pressed" from="background4/how_to_play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="background4/shop_button" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="background4/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="sellect_background/ok" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="sellect_background/background1" to="." method="_on_background1_pressed"]
 [connection signal="pressed" from="sellect_background/background2" to="." method="_on_background2_pressed"]

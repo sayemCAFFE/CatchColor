@@ -27,8 +27,9 @@ func sound_check():
 func _on_Button_pressed():
 	var player_name = $"%LineEdit".text.strip_edges()
 	if player_name != "":
+		$Control/Button.disabled = true
 		SilentWolf.Scores.persist_score(player_name, GlobalVars.my_score)
 		
-		
+	
 		
 		
