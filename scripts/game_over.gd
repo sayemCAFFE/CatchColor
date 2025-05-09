@@ -2,6 +2,8 @@ extends Node2D
 
 func _ready():
 	sound_check()
+	$"%Button".visible = true
+	$"%Sprite2".visible = false
 	$normal_sound.play()
 	$my_score_label.text = ""+str(GlobalVars.my_score)
 
@@ -29,7 +31,6 @@ func _on_Button_pressed():
 	if player_name != "":
 		$Control/Button.disabled = true
 		SilentWolf.Scores.persist_score(player_name, GlobalVars.my_score)
-		
-	
-		
-		
+	$"%Button".visible = false
+	$"%Sprite2".visible = true
+
